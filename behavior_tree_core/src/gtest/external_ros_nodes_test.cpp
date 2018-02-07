@@ -23,8 +23,6 @@ int main(int argc, char **argv)
         BT::ROSAction* action = new BT::ROSAction("action");
         BT::ROSCondition* condition = new BT::ROSCondition("condition");
         
-
-
         BT:: SequenceNode* sequence1 = new BT::SequenceNode("seq1");
 
         sequence1->AddChild(condition);

@@ -46,7 +46,7 @@ void BT::ROSAction::WaitForTick()
         do
         {
             node_result = *(action_client_.getResult());  // checking the result
-            ROS_INFO("I am trying to do actions %s", get_name().c_str());
+            // ROS_INFO("I am trying to do actions %s", get_name().c_str());
         }
         while (node_result.status == BT::RUNNING && get_status() != BT::HALTED);
 

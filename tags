@@ -151,6 +151,7 @@ NodeType	behavior_tree_core/include/tree_node.h	/^enum NodeType {ACTION_NODE, CO
 ON_FAILURE	behavior_tree_core/include/tree_node.h	/^enum ResetPolity   {ON_SUCCESS_OR_FAILURE, ON_SUCCESS, ON_FAILURE};$/;"	e	enum:BT::ResetPolity
 ON_SUCCESS	behavior_tree_core/include/tree_node.h	/^enum ResetPolity   {ON_SUCCESS_OR_FAILURE, ON_SUCCESS, ON_FAILURE};$/;"	e	enum:BT::ResetPolity
 ON_SUCCESS_OR_FAILURE	behavior_tree_core/include/tree_node.h	/^enum ResetPolity   {ON_SUCCESS_OR_FAILURE, ON_SUCCESS, ON_FAILURE};$/;"	e	enum:BT::ResetPolity
+Oncetrue	behavior_tree_leaves/example_nodes/cpp/condition_finddoor.cpp	/^    bool Oncetrue;$/;"	m	class:BTAction	file:
 PARALLEL	behavior_tree_core/include/tree_node.h	/^enum DrawNodeType {PARALLEL, SELECTOR, SEQUENCE, SEQUENCESTAR, SELECTORSTAR, ACTION, CONDITION, DECORATOR};$/;"	e	enum:BT::DrawNodeType
 PARALLEL_NODE_H	behavior_tree_core/include/parallel_node.h	15;"	d
 ParallelNode	behavior_tree_core/include/parallel_node.h	/^class ParallelNode : public ControlNode$/;"	c	namespace:BT
@@ -411,6 +412,7 @@ node_result	behavior_tree_core/include/actions/ros_action.h	/^    behavior_tree_
 node_result	behavior_tree_core/include/actions/ros_action_open.h	/^    behavior_tree_core::BTResult node_result;$/;"	m	class:BT::ROSAction_Open
 node_result	behavior_tree_core/include/conditions/ros_condition.h	/^    behavior_tree_core::BTResult node_result;$/;"	m	class:BT::ROSCondition
 number_char	behavior_tree_core/src/draw.cpp	/^unsigned char number_char[4] = {'0', '1', '2', '3'};$/;"	v
+once_success	behavior_tree_leaves/example_nodes/cpp/action_open.cpp	/^    bool once_success;$/;"	m	class:BTAction	file:
 parallel_1	behavior_tree_core/src/gtest/gtest_tree.cpp	/^    BT::ParallelNode* parallel_1;$/;"	m	struct:ComplexParallelTest	file:
 parallel_2	behavior_tree_core/src/gtest/gtest_tree.cpp	/^    BT::ParallelNode* parallel_2;$/;"	m	struct:ComplexParallelTest	file:
 processSpecialKeys	behavior_tree_core/src/draw.cpp	/^void processSpecialKeys(int key, int xx, int yy)$/;"	f

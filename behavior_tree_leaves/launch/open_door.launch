@@ -3,9 +3,7 @@
   <node name="bh_localization" pkg="behavior_tree_leaves" type="condition_finddoor" output="screen" />
   <node name="bh_opendoor" pkg="behavior_tree_leaves" type="action_open" output="screen"/>
   <node name="test" pkg="behavior_tree_core" type="opening_door" output="screen" />
-  <node name="open_door_server" pkg="villa_manipulation" type="open_door_service.py" output="screen"/> 
-  <node name="handle_node" pkg="handle_tracking" type="scanner"/>
-  
+  <node name="open_door_server" pkg="villa_manipulation" type="open_door_service.py" output="screen"/><node name="handle_node" pkg="handle_tracking" type="scanner"/>
   <node name="localization" pkg="handle_detector" type="handle_detector_localization"> 
 	<!-- affordance search parameters -->
     

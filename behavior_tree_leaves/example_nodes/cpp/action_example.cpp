@@ -39,6 +39,7 @@ public:
     {
         // Starts the action server
         as_.start();
+        ROS_INFO("Condition Server Started");
     }
 
     ~BTAction(void)

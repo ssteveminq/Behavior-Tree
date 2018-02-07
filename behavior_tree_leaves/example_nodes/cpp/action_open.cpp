@@ -32,6 +32,7 @@ protected:
     // create messages that are used to published feedback/result
     behavior_tree_core::BTFeedback feedback_;  // action feedback (SUCCESS, FAILURE)
     behavior_tree_core::BTResult result_;  // action feedback  (same as feedback for us)
+    bool once_success;
 
 
 public:
@@ -40,6 +41,7 @@ public:
         action_name_(name)
     {
         // Starts the action server
+        once_success=false;
         ROS_INFO("start opening_door server");
         as_.start();
     }
@@ -65,57 +67,67 @@ public:
 
         // bbh_obj.registered_cloud_sub = bbh_obj.node.subscribe<sensor_msgs::PointCloud2>("/hsrb/head_rgbd_sensor/depth_registered/rectified_points", 10, boost::bind(&Bounding_Box_dobject::cloud_callback, &bbh_obj, _1));
         // ros::Publisher Pose_sub = nh_.subscribe<geometry_msgs::PoseStamped>("/detected_handle_pos",50,true);
-        ros::ServiceClient client_opendoor = nh_.serviceClient<villa_manipulation::Opendoor>("open_door_service");
-        villa_manipulation::Opendoor Opendoor_srv;    
+        // ros::ServiceClient client_opendoor = nh_.serviceClient<villa_manipulation::Opendoor>("open_door_service");
+        // villa_manipulation::Opendoor Opendoor_srv;    
 
-        boost::shared_ptr<geometry_msgs::PoseStamped const> sharedPtr;
-        sharedPtr  = ros::topic::waitForMessage<geometry_msgs::PoseStamped>("/detected_handle_pos", ros::Duration(10));
-        Opendoor_srv.request.handle_pose=(*sharedPtr);
-        Opendoor_srv.request.angle = 0.0;
-        Opendoor_srv.request.push = false;
+        // boost::shared_ptr<geometry_msgs::PoseStamped const> sharedPtr;
+        // sharedPtr  = ros::topic::waitForMessage<geometry_msgs::PoseStamped>("/detected_handle_pos", ros::Duration(10));
+        // Opendoor_srv.request.handle_pose=(*sharedPtr);
+        // Opendoor_srv.request.angle = 0.0;
+        // Opendoor_srv.request.push = false;
         
-        if(client_opendoor.call(Opendoor_srv)){
 
-            bool open_success = Opendoor_srv.response.success;
-            if(open_success){
-                ROS_INFO("action Succeeded");
+        // if(client_opendoor.call(Opendoor_srv)){
+        //     bool open_success = Opendoor_srv.response.success;
+        //     if(open_success){
+        //         ROS_INFO("action Succeeded");
+        //         set_status(SUCCESS);
+        //     }
+        //     else{
+        //         ROS_INFO("action Failed");
+        //         set_status(FAILURE);
+        //     }          
+        // }
+        // else
+        // {
+        //     set_status(FAILURE);        
+        // }
+
+
+
+        // start executing the action
+        if(!once_success)
+        {
+            int i = 0;
+            while (i < 5)
+            {
+                // check that preempt has not been requested by the client
+                if (as_.isPreemptRequested())
+                {
+                    ROS_INFO("Action Halted");
+
+                    // set the action state to preempted
+                    as_.setPreempted();
+                    break;
+                }
+                ROS_INFO("Executing Action");
+
+                ros::Duration(0.5).sleep();  // waiting for 0.5 seconds
+                i++;
+            }
+
+            if (i == 5)
+            {
                 set_status(SUCCESS);
             }
-            else{
-                ROS_INFO("action Failed");
-                set_status(FAILURE);
-            }          
         }
         else
         {
-            set_status(FAILURE);        
+
+            set_status(SUCCESS);
+            
         }
-
-        // start executing the action
-        // int i = 0;
-        // while (i < 5)
-        // {
-        //     // check that preempt has not been requested by the client
-        //     if (as_.isPreemptRequested())
-        //     {
-        //         ROS_INFO("Action Halted");
-
-        //         // set the action state to preempted
-        //         as_.setPreempted();
-        //         break;
-        //     }
-        //     ROS_INFO("Executing Action");
-
-        //     ros::Duration(0.5).sleep();  // waiting for 0.5 seconds
-        //     i++;
-        // }
-
-        // if (i == 5)
-        // {
-        //     set_status(SUCCESS);
-        // }
     }
-
 
     // returns the status to the client (Behavior Tree)
     void set_status(int status)
@@ -130,14 +142,15 @@ public:
 
         switch (status)  // Print for convenience
         {
-        case SUCCESS:
-            ROS_INFO("Action %s Succeeded", ros::this_node::getName().c_str() );
-            break;
-        case FAILURE:
-            ROS_INFO("Action %s Failed", ros::this_node::getName().c_str() );
-            break;
-        default:
-            break;
+            case SUCCESS:
+                ROS_INFO("Action %s Succeeded", ros::this_node::getName().c_str() );
+                once_success=true;
+                break;
+            case FAILURE:
+                ROS_INFO("Action %s Failed", ros::this_node::getName().c_str() );
+                break;
+            default:
+                break;
         }
     }
 };

@@ -24,8 +24,9 @@ int main(int argc, char **argv)
         BT::ROSAction* action = new BT::ROSAction("bh_opendoor");
         //localize the robote
         BT::ROSCondition* condition = new BT::ROSCondition("bh_localization");
-        BT:: SequenceNode* sequence1 = new BT::SequenceNode("seq1");
+        BT:: SequenceNodeWithMemory* sequence1 = new BT::SequenceNodeWithMemory("seq1");
 
+                // condition->set_boolean_value(tr`)
         sequence1->AddChild(condition);
         sequence1->AddChild(action);
         Execute(sequence1, TickPeriod_milliseconds);  // from BehaviorTree.cpp

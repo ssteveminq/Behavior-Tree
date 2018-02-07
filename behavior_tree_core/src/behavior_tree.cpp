@@ -33,7 +33,8 @@ void Execute(BT::ControlNode* root, int TickPeriod_milliseconds)
         DEBUG_STDOUT("Ticking the root node !");
 
         // Ticking the root node
-        root->Tick();
+        if(root->get_status() !=BT::SUCCESS)
+          root->Tick();
         // Printing its state
         // root->GetNodeState();
 

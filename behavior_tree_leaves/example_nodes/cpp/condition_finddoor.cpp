@@ -15,6 +15,7 @@
 #include <behavior_tree_core/BTAction.h>
 #include <std_msgs/Bool.h>
 #include <geometry_msgs/PoseStamped.h>
+#include <std_msgs/Int8.h>
 #include "handle_tracking/objectfinder.h"
 
 #include <string>
@@ -31,6 +32,7 @@ protected:
     // NodeHandle instance must be created before this line. Otherwise strange errors may occur.
     actionlib::SimpleActionServer<behavior_tree_core::BTAction> as_;
     std::string action_name_;
+    bool Oncetrue;
 
     // create messages that are used to published feedback/result
     behavior_tree_core::BTFeedback feedback_;
@@ -51,37 +53,65 @@ public:
     void execute_callback(const behavior_tree_core::BTGoalConstPtr &goal)
     {
         ROS_INFO("Condition_checker");
-        ros::Publisher Pose_pub = nh_.advertise<geometry_msgs::PoseStamped>("/detected_handle_pos_condition",50,true);
-        ros::ServiceClient client_handlefinder = nh_.serviceClient<handle_tracking::objectfinder>("track_handle");
-        handle_tracking::objectfinder track_srv;
+        // ros::Publisher Pose_pub = nh_.advertise<geometry_msgs::PoseStamped>("/detected_handle_pos_condition",50,true);
+        // ros::ServiceClient client_handlefinder = nh_.serviceClient<handle_tracking::objectfinder>("track_handle");
+        // handle_tracking::objectfinder track_srv;
+        // track_srv.request.entry=false;
 
-        track_srv.request.entry=false;
         bool  Is_found=false;
-        
-        if(client_handlefinder.call(track_srv)){
 
-            Is_found = track_srv.response.handle_is_found;
-            geometry_msgs::PoseStamped handlepose = track_srv.response.best_grasp_pose;
-            Pose_pub.publish(handlepose);
-            ROS_INFO("service Succeeded");
+        if(as_.isPreemptRequested())
+        {
+            ROS_INFO("Action Halted");
+            // set the action state to preempted
+            as_.setPreempted();
+            // break;
+        }
+
+        boost::shared_ptr<std_msgs::Int8 const> sharedPtr;
+        sharedPtr  = ros::topic::waitForMessage<std_msgs::Int8>("/detection/number_of_detected_human", ros::Duration(10));
+        std_msgs::Int8 human_num = (*sharedPtr);
+
+        int humannum=static_cast<int>(human_num.data);
+
+        // ROS_INFO("human num : %d",humannum);
+
+        std::cout<<"human num : "<< humannum<<std::endl;
+        if(humannum>0)
+        {
             set_status(SUCCESS);
-            // set_status(SUCCESS);
-            // if (Is_found)
-            // {
-            //     set_status(SUCCESS);
-            // }
-            // else
-            // {
-            //     set_status(FAILURE);
-            // }
         }
-        else
-        {   
-            set_status(FAILURE);
+        else{
 
-
+             set_status(FAILURE);
         }
 
+
+        //previous code---------------------------------------------------------
+        // if(client_handlefinder.call(track_srv)){
+
+        //     Is_found = track_srv.response.handle_is_found;
+        //     geometry_msgs::PoseStamped handlepose = track_srv.response.best_grasp_pose;
+        //     Pose_pub.publish(handlepose);
+        //     ROS_INFO("service Succeeded");
+            
+        //     set_status(SUCCESS);
+
+        //     // set_status(SUCCESS);
+        //     // if (Is_found)
+        //     // {
+        //     //     set_status(SUCCESS);
+        //     // }
+        //     // else
+        //     // {
+        //     //     set_status(FAILURE);
+        //     // }
+        // }
+        // else
+        // {   
+        //     set_status(FAILURE);
+        // }
+        //---------------------------------------------------------previous code
      
     }
 
