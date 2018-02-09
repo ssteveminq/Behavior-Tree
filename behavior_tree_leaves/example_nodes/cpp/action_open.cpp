@@ -14,13 +14,11 @@
 #include <actionlib/server/simple_action_server.h>
 #include <behavior_tree_core/BTAction.h>
 #include <geometry_msgs/PoseStamped.h>
-#include <villa_manipulation/Opendoor.h>
-
+//#include <villa_manipulation/Opendoor.h>
 #include <string>
 
 
 enum Status {RUNNING, SUCCESS, FAILURE};  // BT return status
-
 
 class BTAction
 {
@@ -65,36 +63,6 @@ public:
 
         ros::Duration(0.5).sleep();  // waiting for 0.5 seconds
 
-        // bbh_obj.registered_cloud_sub = bbh_obj.node.subscribe<sensor_msgs::PointCloud2>("/hsrb/head_rgbd_sensor/depth_registered/rectified_points", 10, boost::bind(&Bounding_Box_dobject::cloud_callback, &bbh_obj, _1));
-        // ros::Publisher Pose_sub = nh_.subscribe<geometry_msgs::PoseStamped>("/detected_handle_pos",50,true);
-        // ros::ServiceClient client_opendoor = nh_.serviceClient<villa_manipulation::Opendoor>("open_door_service");
-        // villa_manipulation::Opendoor Opendoor_srv;    
-
-        // boost::shared_ptr<geometry_msgs::PoseStamped const> sharedPtr;
-        // sharedPtr  = ros::topic::waitForMessage<geometry_msgs::PoseStamped>("/detected_handle_pos", ros::Duration(10));
-        // Opendoor_srv.request.handle_pose=(*sharedPtr);
-        // Opendoor_srv.request.angle = 0.0;
-        // Opendoor_srv.request.push = false;
-        
-
-        // if(client_opendoor.call(Opendoor_srv)){
-        //     bool open_success = Opendoor_srv.response.success;
-        //     if(open_success){
-        //         ROS_INFO("action Succeeded");
-        //         set_status(SUCCESS);
-        //     }
-        //     else{
-        //         ROS_INFO("action Failed");
-        //         set_status(FAILURE);
-        //     }          
-        // }
-        // else
-        // {
-        //     set_status(FAILURE);        
-        // }
-
-
-
         // start executing the action
         if(!once_success)
         {
@@ -123,7 +91,6 @@ public:
         }
         else
         {
-
             set_status(SUCCESS);
             
         }

@@ -122,9 +122,14 @@ target_link_libraries(opening_door
   ${PROJECT_NAME}
   ${GTEST_LIBRARIES})
 
+add_executable(look_person src/gtest/look_person_test.cpp)
+target_link_libraries(look_person 
+  ${catkin_LIBRARIES}
+  ${PROJECT_NAME}
+  ${GTEST_LIBRARIES})
+
 
 #add_executable(ros_test src/ros_test.cpp ${BTSrcLibrary} ${BTHeadLibrary})
 #target_link_libraries(ros_test ${catkin_LIBRARIES} ${OPENGL_LIBRARIES} ${GLUT_LIBRARY})
 #add_dependencies(ros_test behavior_tree_core_generate_messages_cpp)
-
 

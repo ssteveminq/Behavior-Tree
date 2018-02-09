@@ -37,12 +37,16 @@ BT	behavior_tree_core/include/tree_node.h	/^namespace BT$/;"	n
 BT	behavior_tree_core/src/dot_bt.cpp	/^namespace BT$/;"	n	file:
 BTAction	behavior_tree_leaves/example_nodes/cpp/action_example.cpp	/^    explicit BTAction(std::string name) :$/;"	f	class:BTAction
 BTAction	behavior_tree_leaves/example_nodes/cpp/action_example.cpp	/^class BTAction$/;"	c	file:
+BTAction	behavior_tree_leaves/example_nodes/cpp/action_lookperson.cpp	/^    explicit BTAction(std::string name) :$/;"	f	class:BTAction
+BTAction	behavior_tree_leaves/example_nodes/cpp/action_lookperson.cpp	/^class BTAction$/;"	c	file:
 BTAction	behavior_tree_leaves/example_nodes/cpp/action_open.cpp	/^    explicit BTAction(std::string name) :$/;"	f	class:BTAction
 BTAction	behavior_tree_leaves/example_nodes/cpp/action_open.cpp	/^class BTAction$/;"	c	file:
 BTAction	behavior_tree_leaves/example_nodes/cpp/condition_example.cpp	/^    explicit BTAction(std::string name) :$/;"	f	class:BTAction
 BTAction	behavior_tree_leaves/example_nodes/cpp/condition_example.cpp	/^class BTAction$/;"	c	file:
 BTAction	behavior_tree_leaves/example_nodes/cpp/condition_finddoor.cpp	/^    explicit BTAction(std::string name) :$/;"	f	class:BTAction
 BTAction	behavior_tree_leaves/example_nodes/cpp/condition_finddoor.cpp	/^class BTAction$/;"	c	file:
+BTAction	behavior_tree_leaves/example_nodes/cpp/condition_findperson.cpp	/^    explicit BTAction(std::string name) :$/;"	f	class:BTAction
+BTAction	behavior_tree_leaves/example_nodes/cpp/condition_findperson.cpp	/^class BTAction$/;"	c	file:
 BTAction	behavior_tree_leaves/example_nodes/python/action_example.py	/^class BTAction(object):$/;"	c
 BTAction	behavior_tree_leaves/example_nodes/python/condition_example.py	/^class BTAction(object):$/;"	c
 BehaviorTreeException	behavior_tree_core/include/exceptions.h	/^class BehaviorTreeException : public std::exception$/;"	c	namespace:BT
@@ -101,9 +105,11 @@ Execute	behavior_tree_core/src/behavior_tree.cpp	/^void Execute(BT::ControlNode*
 FAILURE	behavior_tree_core/include/tree_node.h	/^enum ReturnStatus {RUNNING, SUCCESS, FAILURE, IDLE, HALTED, EXIT};$/;"	e	enum:BT::ReturnStatus
 FAILURE	behavior_tree_core/src/conditions/ros_condition.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};$/;"	e	enum:Status	file:
 FAILURE	behavior_tree_leaves/example_nodes/cpp/action_example.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};  \/\/ BT return status$/;"	e	enum:Status	file:
+FAILURE	behavior_tree_leaves/example_nodes/cpp/action_lookperson.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};  \/\/ BT return status$/;"	e	enum:Status	file:
 FAILURE	behavior_tree_leaves/example_nodes/cpp/action_open.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};  \/\/ BT return status$/;"	e	enum:Status	file:
 FAILURE	behavior_tree_leaves/example_nodes/cpp/condition_example.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};$/;"	e	enum:Status	file:
 FAILURE	behavior_tree_leaves/example_nodes/cpp/condition_finddoor.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};$/;"	e	enum:Status	file:
+FAILURE	behavior_tree_leaves/example_nodes/cpp/condition_findperson.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};$/;"	e	enum:Status	file:
 FAIL_ON_ALL	behavior_tree_core/include/tree_node.h	/^enum FailurePolicy {FAIL_ON_ONE, FAIL_ON_ALL};$/;"	e	enum:BT::FailurePolicy
 FAIL_ON_ONE	behavior_tree_core/include/tree_node.h	/^enum FailurePolicy {FAIL_ON_ONE, FAIL_ON_ALL};$/;"	e	enum:BT::FailurePolicy
 FALLBACK_NODE_H	behavior_tree_core/include/fallback_node.h	14;"	d
@@ -152,6 +158,7 @@ ON_FAILURE	behavior_tree_core/include/tree_node.h	/^enum ResetPolity   {ON_SUCCE
 ON_SUCCESS	behavior_tree_core/include/tree_node.h	/^enum ResetPolity   {ON_SUCCESS_OR_FAILURE, ON_SUCCESS, ON_FAILURE};$/;"	e	enum:BT::ResetPolity
 ON_SUCCESS_OR_FAILURE	behavior_tree_core/include/tree_node.h	/^enum ResetPolity   {ON_SUCCESS_OR_FAILURE, ON_SUCCESS, ON_FAILURE};$/;"	e	enum:BT::ResetPolity
 Oncetrue	behavior_tree_leaves/example_nodes/cpp/condition_finddoor.cpp	/^    bool Oncetrue;$/;"	m	class:BTAction	file:
+Oncetrue	behavior_tree_leaves/example_nodes/cpp/condition_findperson.cpp	/^    bool Oncetrue;$/;"	m	class:BTAction	file:
 PARALLEL	behavior_tree_core/include/tree_node.h	/^enum DrawNodeType {PARALLEL, SELECTOR, SEQUENCE, SEQUENCESTAR, SELECTORSTAR, ACTION, CONDITION, DECORATOR};$/;"	e	enum:BT::DrawNodeType
 PARALLEL_NODE_H	behavior_tree_core/include/parallel_node.h	15;"	d
 ParallelNode	behavior_tree_core/include/parallel_node.h	/^class ParallelNode : public ControlNode$/;"	c	namespace:BT
@@ -166,9 +173,11 @@ RST	behavior_tree_core/include/tree_node.h	22;"	d
 RUNNING	behavior_tree_core/include/tree_node.h	/^enum ReturnStatus {RUNNING, SUCCESS, FAILURE, IDLE, HALTED, EXIT};$/;"	e	enum:BT::ReturnStatus
 RUNNING	behavior_tree_core/src/conditions/ros_condition.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};$/;"	e	enum:Status	file:
 RUNNING	behavior_tree_leaves/example_nodes/cpp/action_example.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};  \/\/ BT return status$/;"	e	enum:Status	file:
+RUNNING	behavior_tree_leaves/example_nodes/cpp/action_lookperson.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};  \/\/ BT return status$/;"	e	enum:Status	file:
 RUNNING	behavior_tree_leaves/example_nodes/cpp/action_open.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};  \/\/ BT return status$/;"	e	enum:Status	file:
 RUNNING	behavior_tree_leaves/example_nodes/cpp/condition_example.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};$/;"	e	enum:Status	file:
 RUNNING	behavior_tree_leaves/example_nodes/cpp/condition_finddoor.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};$/;"	e	enum:Status	file:
+RUNNING	behavior_tree_leaves/example_nodes/cpp/condition_findperson.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};$/;"	e	enum:Status	file:
 ResetColorState	behavior_tree_core/src/control_node.cpp	/^void BT::ControlNode::ResetColorState()$/;"	f	class:BT::ControlNode
 ResetColorState	behavior_tree_core/src/leaf_node.cpp	/^void BT::LeafNode::ResetColorState()$/;"	f	class:BT::LeafNode
 ResetPolity	behavior_tree_core/include/tree_node.h	/^enum ResetPolity   {ON_SUCCESS_OR_FAILURE, ON_SUCCESS, ON_FAILURE};$/;"	g	namespace:BT
@@ -184,9 +193,11 @@ SUCCEED_ON_ONE	behavior_tree_core/include/tree_node.h	/^enum SuccessPolicy {SUCC
 SUCCESS	behavior_tree_core/include/tree_node.h	/^enum ReturnStatus {RUNNING, SUCCESS, FAILURE, IDLE, HALTED, EXIT};$/;"	e	enum:BT::ReturnStatus
 SUCCESS	behavior_tree_core/src/conditions/ros_condition.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};$/;"	e	enum:Status	file:
 SUCCESS	behavior_tree_leaves/example_nodes/cpp/action_example.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};  \/\/ BT return status$/;"	e	enum:Status	file:
+SUCCESS	behavior_tree_leaves/example_nodes/cpp/action_lookperson.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};  \/\/ BT return status$/;"	e	enum:Status	file:
 SUCCESS	behavior_tree_leaves/example_nodes/cpp/action_open.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};  \/\/ BT return status$/;"	e	enum:Status	file:
 SUCCESS	behavior_tree_leaves/example_nodes/cpp/condition_example.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};$/;"	e	enum:Status	file:
 SUCCESS	behavior_tree_leaves/example_nodes/cpp/condition_finddoor.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};$/;"	e	enum:Status	file:
+SUCCESS	behavior_tree_leaves/example_nodes/cpp/condition_findperson.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};$/;"	e	enum:Status	file:
 SequenceNode	behavior_tree_core/include/sequence_node.h	/^class SequenceNode : public ControlNode$/;"	c	namespace:BT
 SequenceNode	behavior_tree_core/src/sequence_node.cpp	/^BT::SequenceNode::SequenceNode(std::string name) : ControlNode::ControlNode(name) {}$/;"	f	class:BT::SequenceNode
 SequenceNodeWithMemory	behavior_tree_core/include/sequence_node_with_memory.h	/^class SequenceNodeWithMemory : public ControlNode$/;"	c	namespace:BT
@@ -204,9 +215,11 @@ SimpleSequenceWithMemoryTest	behavior_tree_core/src/gtest/gtest_tree.cpp	/^    S
 SimpleSequenceWithMemoryTest	behavior_tree_core/src/gtest/gtest_tree.cpp	/^struct SimpleSequenceWithMemoryTest : testing::Test$/;"	s	file:
 Status	behavior_tree_core/src/conditions/ros_condition.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};$/;"	g	file:
 Status	behavior_tree_leaves/example_nodes/cpp/action_example.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};  \/\/ BT return status$/;"	g	file:
+Status	behavior_tree_leaves/example_nodes/cpp/action_lookperson.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};  \/\/ BT return status$/;"	g	file:
 Status	behavior_tree_leaves/example_nodes/cpp/action_open.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};  \/\/ BT return status$/;"	g	file:
 Status	behavior_tree_leaves/example_nodes/cpp/condition_example.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};$/;"	g	file:
 Status	behavior_tree_leaves/example_nodes/cpp/condition_finddoor.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};$/;"	g	file:
+Status	behavior_tree_leaves/example_nodes/cpp/condition_findperson.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};$/;"	g	file:
 SuccessPolicy	behavior_tree_core/include/tree_node.h	/^enum SuccessPolicy {SUCCEED_ON_ONE, SUCCEED_ON_ALL};$/;"	g	namespace:BT
 TEST_F	behavior_tree_core/src/gtest/gtest_tree.cpp	/^TEST_F(BehaviorTreeTest, Condition1ToFalseCondition2True)$/;"	f
 TEST_F	behavior_tree_core/src/gtest/gtest_tree.cpp	/^TEST_F(BehaviorTreeTest, Condition2ToFalseCondition1True)$/;"	f
@@ -291,15 +304,19 @@ action_client_	behavior_tree_core/include/actions/ros_action.h	/^    actionlib::
 action_client_	behavior_tree_core/include/actions/ros_action_open.h	/^    actionlib::SimpleActionClient<behavior_tree_core::BTAction> action_client_;$/;"	m	class:BT::ROSAction_Open
 action_client_	behavior_tree_core/include/conditions/ros_condition.h	/^    actionlib::SimpleActionClient<behavior_tree_core::BTAction> action_client_;$/;"	m	class:BT::ROSCondition
 action_name_	behavior_tree_leaves/example_nodes/cpp/action_example.cpp	/^    std::string action_name_;$/;"	m	class:BTAction	file:
+action_name_	behavior_tree_leaves/example_nodes/cpp/action_lookperson.cpp	/^    std::string action_name_;$/;"	m	class:BTAction	file:
 action_name_	behavior_tree_leaves/example_nodes/cpp/action_open.cpp	/^    std::string action_name_;$/;"	m	class:BTAction	file:
 action_name_	behavior_tree_leaves/example_nodes/cpp/condition_example.cpp	/^    std::string action_name_;$/;"	m	class:BTAction	file:
 action_name_	behavior_tree_leaves/example_nodes/cpp/condition_finddoor.cpp	/^    std::string action_name_;$/;"	m	class:BTAction	file:
+action_name_	behavior_tree_leaves/example_nodes/cpp/condition_findperson.cpp	/^    std::string action_name_;$/;"	m	class:BTAction	file:
 additional_spacing_array	behavior_tree_core/src/draw.cpp	/^float additional_spacing_array[10];$/;"	v
 aliases_	behavior_tree_core/include/dot_bt.h	/^  std::vector<std::string> aliases_;$/;"	m	class:BT::DotBt
 as_	behavior_tree_leaves/example_nodes/cpp/action_example.cpp	/^    actionlib::SimpleActionServer<behavior_tree_core::BTAction> as_;$/;"	m	class:BTAction	file:
+as_	behavior_tree_leaves/example_nodes/cpp/action_lookperson.cpp	/^    actionlib::SimpleActionServer<behavior_tree_core::BTAction> as_;$/;"	m	class:BTAction	file:
 as_	behavior_tree_leaves/example_nodes/cpp/action_open.cpp	/^    actionlib::SimpleActionServer<behavior_tree_core::BTAction> as_;$/;"	m	class:BTAction	file:
 as_	behavior_tree_leaves/example_nodes/cpp/condition_example.cpp	/^    actionlib::SimpleActionServer<behavior_tree_core::BTAction> as_;$/;"	m	class:BTAction	file:
 as_	behavior_tree_leaves/example_nodes/cpp/condition_finddoor.cpp	/^    actionlib::SimpleActionServer<behavior_tree_core::BTAction> as_;$/;"	m	class:BTAction	file:
+as_	behavior_tree_leaves/example_nodes/cpp/condition_findperson.cpp	/^    actionlib::SimpleActionServer<behavior_tree_core::BTAction> as_;$/;"	m	class:BTAction	file:
 b_color	behavior_tree_core/src/draw.cpp	/^float b_color = 1;$/;"	v
 boolean_value_	behavior_tree_core/include/actions/action_test_node.h	/^    bool boolean_value_;$/;"	m	class:BT::ActionTestNode
 boolean_value_	behavior_tree_core/include/conditions/condition_test_node.h	/^    bool boolean_value_;$/;"	m	class:BT::ConditionTestNode
@@ -347,18 +364,22 @@ draw_edge	behavior_tree_core/src/draw.cpp	/^void draw_edge(GLfloat parent_x, GLf
 draw_node	behavior_tree_core/src/draw.cpp	/^void draw_node(float x, float y, int node_type, const char *leafName, int status)$/;"	f
 draw_straight_edge	behavior_tree_core/src/draw.cpp	/^void draw_straight_edge(GLfloat parent_x, GLfloat parent_y,$/;"	f
 execute_callback	behavior_tree_leaves/example_nodes/cpp/action_example.cpp	/^    void execute_callback(const behavior_tree_core::BTGoalConstPtr &goal)$/;"	f	class:BTAction
+execute_callback	behavior_tree_leaves/example_nodes/cpp/action_lookperson.cpp	/^    void execute_callback(const behavior_tree_core::BTGoalConstPtr &goal)$/;"	f	class:BTAction
 execute_callback	behavior_tree_leaves/example_nodes/cpp/action_open.cpp	/^    void execute_callback(const behavior_tree_core::BTGoalConstPtr &goal)$/;"	f	class:BTAction
 execute_callback	behavior_tree_leaves/example_nodes/cpp/condition_example.cpp	/^    void execute_callback(const behavior_tree_core::BTGoalConstPtr &goal)$/;"	f	class:BTAction
 execute_callback	behavior_tree_leaves/example_nodes/cpp/condition_finddoor.cpp	/^    void execute_callback(const behavior_tree_core::BTGoalConstPtr &goal)$/;"	f	class:BTAction
+execute_callback	behavior_tree_leaves/example_nodes/cpp/condition_findperson.cpp	/^    void execute_callback(const behavior_tree_core::BTGoalConstPtr &goal)$/;"	f	class:BTAction
 execute_cb	behavior_tree_leaves/example_nodes/python/action_example.py	/^  def execute_cb(self, goal):$/;"	m	class:BTAction
 execute_cb	behavior_tree_leaves/example_nodes/python/condition_example.py	/^  def execute_cb(self, goal):$/;"	m	class:BTAction
 failure_childred_num_	behavior_tree_core/include/parallel_node.h	/^    unsigned int failure_childred_num_;$/;"	m	class:BT::ParallelNode
 fal_actions	behavior_tree_core/src/gtest/gtest_tree.cpp	/^    BT:: FallbackNodeWithMemory* fal_actions;$/;"	m	struct:ComplexFallbackWithMemoryTest	file:
 fal_conditions	behavior_tree_core/src/gtest/gtest_tree.cpp	/^    BT:: FallbackNodeWithMemory* fal_conditions;$/;"	m	struct:ComplexFallbackWithMemoryTest	file:
 feedback_	behavior_tree_leaves/example_nodes/cpp/action_example.cpp	/^    behavior_tree_core::BTFeedback feedback_;  \/\/ action feedback (SUCCESS, FAILURE)$/;"	m	class:BTAction	file:
+feedback_	behavior_tree_leaves/example_nodes/cpp/action_lookperson.cpp	/^    behavior_tree_core::BTFeedback feedback_;  \/\/ action feedback (SUCCESS, FAILURE)$/;"	m	class:BTAction	file:
 feedback_	behavior_tree_leaves/example_nodes/cpp/action_open.cpp	/^    behavior_tree_core::BTFeedback feedback_;  \/\/ action feedback (SUCCESS, FAILURE)$/;"	m	class:BTAction	file:
 feedback_	behavior_tree_leaves/example_nodes/cpp/condition_example.cpp	/^    behavior_tree_core::BTFeedback feedback_;$/;"	m	class:BTAction	file:
 feedback_	behavior_tree_leaves/example_nodes/cpp/condition_finddoor.cpp	/^    behavior_tree_core::BTFeedback feedback_;$/;"	m	class:BTAction	file:
+feedback_	behavior_tree_leaves/example_nodes/cpp/condition_findperson.cpp	/^    behavior_tree_core::BTFeedback feedback_;$/;"	m	class:BTAction	file:
 font	behavior_tree_core/src/draw.cpp	/^void * font = font_array[0];$/;"	v
 font_array	behavior_tree_core/src/draw.cpp	/^void * font_array[3] = {GLUT_BITMAP_8_BY_13, GLUT_BITMAP_8_BY_13, GLUT_BITMAP_8_BY_13};$/;"	v
 fraction	behavior_tree_core/src/draw.cpp	/^float fraction = 0.1f;$/;"	v
@@ -383,16 +404,19 @@ is_state_updated_	behavior_tree_core/include/tree_node.h	/^    bool is_state_upd
 keyboard	behavior_tree_core/src/draw.cpp	/^void keyboard(unsigned char key, int x, int y)$/;"	f
 keyboard_release	behavior_tree_core/src/draw.cpp	/^void keyboard_release(unsigned char key, int x, int y)$/;"	f
 left_right_	behavior_tree_core/include/dot_bt.h	/^  bool left_right_;$/;"	m	class:BT::DotBt
-localization_callback	behavior_tree_leaves/example_nodes/cpp/condition_finddoor.cpp	/^void localization_callback(const std_msgs::Bool::ConstPtr& msg)$/;"	f
 loop_rate_	behavior_tree_core/include/dot_bt.h	/^  ros::Rate loop_rate_;$/;"	m	class:BT::DotBt
 main	behavior_tree_core/src/gtest/external_ros_nodes_test.cpp	/^int main(int argc, char **argv)$/;"	f
 main	behavior_tree_core/src/gtest/gtest_tree.cpp	/^int main(int argc, char **argv)$/;"	f
+main	behavior_tree_core/src/gtest/look_person_test.cpp	/^int main(int argc, char **argv)$/;"	f
+main	behavior_tree_core/src/gtest/lookperson_test.cpp	/^int main(int argc, char **argv)$/;"	f
 main	behavior_tree_core/src/gtest/opening_door_test.cpp	/^int main(int argc, char **argv)$/;"	f
 main	behavior_tree_core/src/tree.cpp	/^int main(int argc, char **argv)$/;"	f
 main	behavior_tree_leaves/example_nodes/cpp/action_example.cpp	/^int main(int argc, char** argv)$/;"	f
+main	behavior_tree_leaves/example_nodes/cpp/action_lookperson.cpp	/^int main(int argc, char** argv)$/;"	f
 main	behavior_tree_leaves/example_nodes/cpp/action_open.cpp	/^int main(int argc, char** argv)$/;"	f
 main	behavior_tree_leaves/example_nodes/cpp/condition_example.cpp	/^int main(int argc, char** argv)$/;"	f
 main	behavior_tree_leaves/example_nodes/cpp/condition_finddoor.cpp	/^int main(int argc, char** argv)$/;"	f
+main	behavior_tree_leaves/example_nodes/cpp/condition_findperson.cpp	/^int main(int argc, char** argv)$/;"	f
 main	behavior_tree_leaves/src/action_client.cpp	/^int main(int argc, char **argv)$/;"	f
 main	behavior_tree_leaves/src/condition_client.cpp	/^int main(int argc, char **argv)$/;"	f
 main	behavior_tree_leaves/src/finddoor_condition_client.cpp	/^int main(int argc, char **argv)$/;"	f
@@ -405,13 +429,16 @@ mutex_	behavior_tree_core/include/tick_engine.h	/^    std::mutex mutex_;$/;"	m	c
 n_	behavior_tree_core/include/dot_bt.h	/^  ros::NodeHandle n_;$/;"	m	class:BT::DotBt
 name_	behavior_tree_core/include/tree_node.h	/^    std::string name_;$/;"	m	class:BT::TreeNode
 nh_	behavior_tree_leaves/example_nodes/cpp/action_example.cpp	/^    ros::NodeHandle nh_;$/;"	m	class:BTAction	file:
+nh_	behavior_tree_leaves/example_nodes/cpp/action_lookperson.cpp	/^    ros::NodeHandle nh_;$/;"	m	class:BTAction	file:
 nh_	behavior_tree_leaves/example_nodes/cpp/action_open.cpp	/^    ros::NodeHandle nh_;$/;"	m	class:BTAction	file:
 nh_	behavior_tree_leaves/example_nodes/cpp/condition_example.cpp	/^    ros::NodeHandle nh_;$/;"	m	class:BTAction	file:
 nh_	behavior_tree_leaves/example_nodes/cpp/condition_finddoor.cpp	/^    ros::NodeHandle nh_;$/;"	m	class:BTAction	file:
+nh_	behavior_tree_leaves/example_nodes/cpp/condition_findperson.cpp	/^    ros::NodeHandle nh_;$/;"	m	class:BTAction	file:
 node_result	behavior_tree_core/include/actions/ros_action.h	/^    behavior_tree_core::BTResult node_result;$/;"	m	class:BT::ROSAction
 node_result	behavior_tree_core/include/actions/ros_action_open.h	/^    behavior_tree_core::BTResult node_result;$/;"	m	class:BT::ROSAction_Open
 node_result	behavior_tree_core/include/conditions/ros_condition.h	/^    behavior_tree_core::BTResult node_result;$/;"	m	class:BT::ROSCondition
 number_char	behavior_tree_core/src/draw.cpp	/^unsigned char number_char[4] = {'0', '1', '2', '3'};$/;"	v
+once_success	behavior_tree_leaves/example_nodes/cpp/action_lookperson.cpp	/^    bool once_success;$/;"	m	class:BTAction	file:
 once_success	behavior_tree_leaves/example_nodes/cpp/action_open.cpp	/^    bool once_success;$/;"	m	class:BTAction	file:
 parallel_1	behavior_tree_core/src/gtest/gtest_tree.cpp	/^    BT::ParallelNode* parallel_1;$/;"	m	struct:ComplexParallelTest	file:
 parallel_2	behavior_tree_core/src/gtest/gtest_tree.cpp	/^    BT::ParallelNode* parallel_2;$/;"	m	struct:ComplexParallelTest	file:
@@ -420,13 +447,16 @@ produceDot	behavior_tree_core/src/dot_bt.cpp	/^void DotBt::produceDot(TreeNode* 
 publish	behavior_tree_core/src/dot_bt.cpp	/^void DotBt::publish()$/;"	f	class:BT::DotBt
 r_color	behavior_tree_core/src/draw.cpp	/^float r_color = 1;$/;"	v
 received_bool	behavior_tree_leaves/example_nodes/cpp/condition_finddoor.cpp	/^bool received_bool=false;$/;"	v
+received_bool	behavior_tree_leaves/example_nodes/cpp/condition_findperson.cpp	/^bool received_bool=false;$/;"	v
 renderBitmapString	behavior_tree_core/src/draw.cpp	/^void renderBitmapString(float x, float y, void *font, const char *string)$/;"	f
 reset_policy_	behavior_tree_core/include/fallback_node_with_memory.h	/^    unsigned int reset_policy_;$/;"	m	class:BT::FallbackNodeWithMemory
 reset_policy_	behavior_tree_core/include/sequence_node_with_memory.h	/^    unsigned int reset_policy_;$/;"	m	class:BT::SequenceNodeWithMemory
 result_	behavior_tree_leaves/example_nodes/cpp/action_example.cpp	/^    behavior_tree_core::BTResult result_;  \/\/ action feedback  (same as feedback for us)$/;"	m	class:BTAction	file:
+result_	behavior_tree_leaves/example_nodes/cpp/action_lookperson.cpp	/^    behavior_tree_core::BTResult result_;  \/\/ action feedback  (same as feedback for us)$/;"	m	class:BTAction	file:
 result_	behavior_tree_leaves/example_nodes/cpp/action_open.cpp	/^    behavior_tree_core::BTResult result_;  \/\/ action feedback  (same as feedback for us)$/;"	m	class:BTAction	file:
 result_	behavior_tree_leaves/example_nodes/cpp/condition_example.cpp	/^    behavior_tree_core::BTResult result_;$/;"	m	class:BTAction	file:
 result_	behavior_tree_leaves/example_nodes/cpp/condition_finddoor.cpp	/^    behavior_tree_core::BTResult result_;$/;"	m	class:BTAction	file:
+result_	behavior_tree_leaves/example_nodes/cpp/condition_findperson.cpp	/^    behavior_tree_core::BTResult result_;$/;"	m	class:BTAction	file:
 root	behavior_tree_core/src/gtest/gtest_tree.cpp	/^    BT:: FallbackNode* root;$/;"	m	struct:ComplexFallbackTest	file:
 root	behavior_tree_core/src/gtest/gtest_tree.cpp	/^    BT:: FallbackNode* root;$/;"	m	struct:SimpleFallbackTest	file:
 root	behavior_tree_core/src/gtest/gtest_tree.cpp	/^    BT:: FallbackNodeWithMemory* root;$/;"	m	struct:ComplexFallbackWithMemoryTest	file:
@@ -454,9 +484,11 @@ set_has_parent	behavior_tree_core/src/tree_node.cpp	/^void BT::TreeNode::set_has
 set_name	behavior_tree_core/src/tree_node.cpp	/^void BT::TreeNode::set_name(std::string new_name)$/;"	f	class:BT::TreeNode
 set_status	behavior_tree_core/src/tree_node.cpp	/^void BT::TreeNode::set_status(ReturnStatus new_status)$/;"	f	class:BT::TreeNode
 set_status	behavior_tree_leaves/example_nodes/cpp/action_example.cpp	/^    void set_status(int status)$/;"	f	class:BTAction
+set_status	behavior_tree_leaves/example_nodes/cpp/action_lookperson.cpp	/^    void set_status(int status)$/;"	f	class:BTAction
 set_status	behavior_tree_leaves/example_nodes/cpp/action_open.cpp	/^    void set_status(int status)$/;"	f	class:BTAction
 set_status	behavior_tree_leaves/example_nodes/cpp/condition_example.cpp	/^    void set_status(int status)$/;"	f	class:BTAction
 set_status	behavior_tree_leaves/example_nodes/cpp/condition_finddoor.cpp	/^    void set_status(int status)$/;"	f	class:BTAction
+set_status	behavior_tree_leaves/example_nodes/cpp/condition_findperson.cpp	/^    void set_status(int status)$/;"	f	class:BTAction
 set_status	behavior_tree_leaves/example_nodes/python/action_example.py	/^  def set_status(self,status):$/;"	m	class:BTAction
 set_status	behavior_tree_leaves/example_nodes/python/condition_example.py	/^  def set_status(self,status):$/;"	m	class:BTAction
 set_threshold_M	behavior_tree_core/src/parallel_node.cpp	/^void BT::ParallelNode::set_threshold_M(unsigned int threshold_M)$/;"	f	class:BT::ParallelNode
@@ -489,9 +521,11 @@ zoom_fraction	behavior_tree_core/src/draw.cpp	/^float zoom_fraction = 0.1f;$/;"	
 ~ActionNode	behavior_tree_core/src/action_node.cpp	/^BT::ActionNode::~ActionNode() {}$/;"	f	class:BT::ActionNode
 ~ActionTestNode	behavior_tree_core/src/actions/action_test_node.cpp	/^BT::ActionTestNode::~ActionTestNode() {}$/;"	f	class:BT::ActionTestNode
 ~BTAction	behavior_tree_leaves/example_nodes/cpp/action_example.cpp	/^    ~BTAction(void)$/;"	f	class:BTAction
+~BTAction	behavior_tree_leaves/example_nodes/cpp/action_lookperson.cpp	/^    ~BTAction(void)$/;"	f	class:BTAction
 ~BTAction	behavior_tree_leaves/example_nodes/cpp/action_open.cpp	/^    ~BTAction(void)$/;"	f	class:BTAction
 ~BTAction	behavior_tree_leaves/example_nodes/cpp/condition_example.cpp	/^    ~BTAction(void)$/;"	f	class:BTAction
 ~BTAction	behavior_tree_leaves/example_nodes/cpp/condition_finddoor.cpp	/^    ~BTAction(void)$/;"	f	class:BTAction
+~BTAction	behavior_tree_leaves/example_nodes/cpp/condition_findperson.cpp	/^    ~BTAction(void)$/;"	f	class:BTAction
 ~CONSTRUCTOR	behavior_tree_core/templates/action_node_template.cpp	/^BT::CLASSNAME::~CONSTRUCTOR() {}$/;"	f	class:BT::CLASSNAME
 ~CONSTRUCTOR	behavior_tree_core/templates/condition_node_template.cpp	/^BT::CLASSNAME::~CONSTRUCTOR() {}$/;"	f	class:BT::CLASSNAME
 ~ConditionNode	behavior_tree_core/src/condition_node.cpp	/^BT::ConditionNode::~ConditionNode() {}$/;"	f	class:BT::ConditionNode

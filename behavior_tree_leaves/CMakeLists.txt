@@ -202,6 +202,19 @@ add_dependencies(
   behavior_tree_core_generate_messages_cpp
 )
 
+add_executable(action_lookperson example_nodes/cpp/action_lookperson.cpp)
+
+target_link_libraries(
+  action_lookperson
+  ${catkin_LIBRARIES}
+)
+
+add_dependencies(
+ action_lookperson
+  ${behavior_tree_leaves_EXPORTED_TARGETS}
+  ${PROJECT_NAME}_generate_messages_cpp
+  behavior_tree_core_generate_messages_cpp
+)
 
 add_executable(condition_example example_nodes/cpp/condition_example.cpp)
 
@@ -226,6 +239,20 @@ target_link_libraries(
 
 add_dependencies(
  condition_finddoor
+  ${behavior_tree_leaves_EXPORTED_TARGETS}
+  ${PROJECT_NAME}_generate_messages_cpp
+  behavior_tree_core_generate_messages_cpp
+)
+
+
+add_executable(condition_findperson example_nodes/cpp/condition_findperson.cpp)
+target_link_libraries(
+  condition_findperson 
+  ${catkin_LIBRARIES}
+)
+
+add_dependencies(
+  condition_finddoor
   ${behavior_tree_leaves_EXPORTED_TARGETS}
   ${PROJECT_NAME}_generate_messages_cpp
   behavior_tree_core_generate_messages_cpp

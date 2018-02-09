@@ -13,75 +13,89 @@
 #include <ros/ros.h>
 #include <actionlib/server/simple_action_server.h>
 #include <behavior_tree_core/BTAction.h>
-#include <std_msgs/Bool.h>
 #include <geometry_msgs/PoseStamped.h>
-#include <std_msgs/Int8.h>
-
 #include <string>
 
-enum Status {RUNNING, SUCCESS, FAILURE};
 
-
-bool received_bool=false;
+enum Status {RUNNING, SUCCESS, FAILURE};  // BT return status
 
 class BTAction
 {
 protected:
     ros::NodeHandle nh_;
-    // NodeHandle instance must be created before this line. Otherwise strange errors may occur.
+    // NodeHandle instance must be created before this line. Otherwise strange error may occur.
     actionlib::SimpleActionServer<behavior_tree_core::BTAction> as_;
     std::string action_name_;
-    bool Oncetrue;
-
     // create messages that are used to published feedback/result
-    behavior_tree_core::BTFeedback feedback_;
-    behavior_tree_core::BTResult result_;
+    behavior_tree_core::BTFeedback feedback_;  // action feedback (SUCCESS, FAILURE)
+    behavior_tree_core::BTResult result_;  // action feedback  (same as feedback for us)
+    bool once_success;
+
 
 public:
     explicit BTAction(std::string name) :
         as_(nh_, name, boost::bind(&BTAction::execute_callback, this, _1), false),
         action_name_(name)
     {
-        // start the action server (action in sense of Actionlib not BT action)
+        // Starts the action server
+        once_success=false;
+        ROS_INFO("start opening_door server");
         as_.start();
-        ROS_INFO("Condition Server Started");
     }
 
     ~BTAction(void)
-    { }
+    {}
+
     void execute_callback(const behavior_tree_core::BTGoalConstPtr &goal)
     {
-        ROS_INFO("Condition_checker");
+        // publish info to the console for the user
+        ROS_INFO("Starting Action");
 
-        bool  Is_found=false;
-
-        if(as_.isPreemptRequested())
+        if (as_.isPreemptRequested())
         {
             ROS_INFO("Action Halted");
             // set the action state to preempted
             as_.setPreempted();
-            // break;
+            return;
         }
+        ROS_INFO("Executing Action");
 
-        //Recieve the ros msg about the number of human detected
-        boost::shared_ptr<std_msgs::Int8 const> sharedPtr;
-        sharedPtr  = ros::topic::waitForMessage<std_msgs::Int8>("/detection/number_of_detected_human", ros::Duration(10));
-        std_msgs::Int8 human_num = (*sharedPtr);
+        ros::Duration(0.5).sleep();  // waiting for 0.5 seconds
 
-        int humannum=static_cast<int>(human_num.data);
+        // start executing the action
+        if(!once_success)
+        {
+            int i = 0;
+            while (i < 5)
+            {
+                // check that preempt has not been requested by the client
+                if (as_.isPreemptRequested())
+                {
+                    ROS_INFO("Action Halted");
 
-        std::cout<<"human number: "<< humannum<<std::endl;
-        if(humannum>0)
+                    // set the action state to preempted
+                    as_.setPreempted();
+                    break;
+                }
+                ROS_INFO("Executing Action");
+
+                ros::Duration(0.5).sleep();  // waiting for 0.5 seconds
+                i++;
+            }
+
+            if (i == 5)
+            {
+                set_status(SUCCESS);
+            }
+        }
+        else
         {
             set_status(SUCCESS);
-        }
-        else{
-
-             set_status(FAILURE);
+            
         }
     }
 
-    //  returns the status to the client (Behavior Tree)
+    // returns the status to the client (Behavior Tree)
     void set_status(int status)
     {
         // Set The feedback and result of BT.action
@@ -94,14 +108,15 @@ public:
 
         switch (status)  // Print for convenience
         {
-        case SUCCESS:
-            ROS_INFO("Condition %s Succeeded", ros::this_node::getName().c_str() );
-            break;
-        case FAILURE:
-            ROS_INFO("Condition %s Failed", ros::this_node::getName().c_str() );
-            break;
-        default:
-            break;
+            case SUCCESS:
+                ROS_INFO("Action %s Succeeded", ros::this_node::getName().c_str() );
+                once_success=true;
+                break;
+            case FAILURE:
+                ROS_INFO("Action %s Failed", ros::this_node::getName().c_str() );
+                break;
+            default:
+                break;
         }
     }
 };
@@ -109,11 +124,10 @@ public:
 
 int main(int argc, char** argv)
 {
-    ros::init(argc, argv, "bh_localization");
-    ROS_INFO("Enum: %d", RUNNING);
-    ROS_INFO("condition Ready for Ticks");
+    ros::init(argc, argv, "look_person");
+    ROS_INFO(" Enum: %d", RUNNING);
+    ROS_INFO(" Action Ready for Ticks");
     BTAction bt_action(ros::this_node::getName());
-    
     ros::spin();
 
     return 0;

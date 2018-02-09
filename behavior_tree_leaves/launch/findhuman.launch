@@ -1,7 +1,7 @@
 <launch>
   
-  <node name="bh_localization" pkg="behavior_tree_leaves" type="condition_finddoor" output="screen" />
-  <node name="bh_opendoor" pkg="behavior_tree_leaves" type="action_open" output="screen"/>
-  <node name="test" pkg="behavior_tree_core" type="opening_door" output="screen" />
+  <node name="find_person" pkg="behavior_tree_leaves" type="condition_findperson" output="screen" />
+  <node name="look_person" pkg="behavior_tree_leaves" type="action_lookperson" output="screen"/>
+  <node name="test" pkg="behavior_tree_core" type="look_person" output="screen" />
  
 </launch>

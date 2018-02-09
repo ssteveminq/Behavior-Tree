@@ -51,7 +51,7 @@ public:
     { }
     void execute_callback(const behavior_tree_core::BTGoalConstPtr &goal)
     {
-        ROS_INFO("Condition_checker");
+        ROS_INFO("Condition_checker-find human");
 
         bool  Is_found=false;
 
@@ -67,9 +67,7 @@ public:
         boost::shared_ptr<std_msgs::Int8 const> sharedPtr;
         sharedPtr  = ros::topic::waitForMessage<std_msgs::Int8>("/detection/number_of_detected_human", ros::Duration(10));
         std_msgs::Int8 human_num = (*sharedPtr);
-
         int humannum=static_cast<int>(human_num.data);
-
         std::cout<<"human number: "<< humannum<<std::endl;
         if(humannum>0)
         {
@@ -107,11 +105,15 @@ public:
 };
 
 
+
 int main(int argc, char** argv)
 {
-    ros::init(argc, argv, "bh_localization");
+    ros::init(argc, argv, "find_person");
     ROS_INFO("Enum: %d", RUNNING);
+    ROS_INFO("I am waiting for detecting humans");
     ROS_INFO("condition Ready for Ticks");
+
+    //Generate ros_action by node name
     BTAction bt_action(ros::this_node::getName());
     
     ros::spin();
