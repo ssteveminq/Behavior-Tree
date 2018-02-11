@@ -244,7 +244,6 @@ add_dependencies(
   behavior_tree_core_generate_messages_cpp
 )
 
-
 add_executable(condition_findperson example_nodes/cpp/condition_findperson.cpp)
 target_link_libraries(
   condition_findperson 
@@ -252,7 +251,16 @@ target_link_libraries(
 )
 
 add_dependencies(
-  condition_finddoor
+  condition_findperson
+  ${behavior_tree_leaves_EXPORTED_TARGETS}
+  ${PROJECT_NAME}_generate_messages_cpp
+  behavior_tree_core_generate_messages_cpp
+)
+
+add_executable(findperson_condition_client src/findperson_condition_client.cpp)
+target_link_libraries(findperson_condition_client ${catkin_LIBRARIES})
+add_dependencies(
+ findperson_condition_client 
   ${behavior_tree_leaves_EXPORTED_TARGETS}
   ${PROJECT_NAME}_generate_messages_cpp
   behavior_tree_core_generate_messages_cpp

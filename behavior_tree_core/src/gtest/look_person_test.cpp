@@ -10,7 +10,6 @@
 *   WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-
 #include <behavior_tree.h>
 
 int main(int argc, char **argv)
@@ -21,12 +20,13 @@ int main(int argc, char **argv)
         int TickPeriod_milliseconds = 2000;
 
         //navigate to the goal
-        BT::ROSAction* action = new BT::ROSAction("find_person");
+        BT::ROSAction* action = new BT::ROSAction("look_person");
         //localize the robote
-        BT::ROSCondition* condition = new BT::ROSCondition("look_person");
+        BT::ROSCondition* condition = new BT::ROSCondition("find_person");
         BT:: SequenceNodeWithMemory* sequence1 = new BT::SequenceNodeWithMemory("seq1");
+        //BT:: SequenceNodeWithMemory* sequence1 = new BT::Se("seq1");
 
-                // condition->set_boolean_value(tr`)
+        //condition->set_boolean_value(true);
         sequence1->AddChild(condition);
         sequence1->AddChild(action);
         Execute(sequence1, TickPeriod_milliseconds);  // from BehaviorTree.cpp

@@ -21,7 +21,6 @@
 
 enum Status {RUNNING, SUCCESS, FAILURE};
 
-
 bool received_bool=false;
 
 class BTAction
@@ -63,13 +62,20 @@ public:
             // break;
         }
 
-        //Recieve the ros msg about the number of human detected
-        boost::shared_ptr<std_msgs::Int8 const> sharedPtr;
-        sharedPtr  = ros::topic::waitForMessage<std_msgs::Int8>("/detection/number_of_detected_human", ros::Duration(10));
-        std_msgs::Int8 human_num = (*sharedPtr);
-        int humannum=static_cast<int>(human_num.data);
-        std::cout<<"human number: "<< humannum<<std::endl;
-        if(humannum>0)
+
+        //boost::shared_ptr<std_msgs::Int8 const> sharedPtr;
+        //ksksk msg about the number of human detected
+        //ksksk msg about the number of human detected
+        //boost::shared_ptr<std_msgs::Int8 const> sharedPtr;
+        //sharedPtr  = ros::topic::waitForMessage<std_msgs::Int8>("/detection/number_of_detected_human", ros::Duration(10));
+        //std_msgs::Int8 human_num = (*sharedPtr);
+        //int humannum=static_cast<int>(human_num.data);
+        
+
+        //set_status(SUCCESS);
+        int received_param=goal->parameter; 
+        std::cout<<"received msg: "<< goal->parameter<<std::endl;
+        if(received_param>0)
         {
             set_status(SUCCESS);
         }

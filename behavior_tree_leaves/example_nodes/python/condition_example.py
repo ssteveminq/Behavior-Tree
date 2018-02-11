@@ -2,9 +2,7 @@
 
 
 import rospy
-
 import actionlib
-
 import behavior_tree_core.msg
 
 
@@ -28,7 +26,6 @@ class BTAction(object):
     self.set_status('FAILURE')
 
     
-
   def set_status(self,status):
       if status == 'SUCCESS':
         self._feedback.status = 1

@@ -36,7 +36,7 @@ void Execute(BT::ControlNode* root, int TickPeriod_milliseconds)
         if(root->get_status() !=BT::SUCCESS)
           root->Tick();
         // Printing its state
-        // root->GetNodeState();
+         //root->GetNodeState();
 
         if (root->get_status() != BT::RUNNING)
         {

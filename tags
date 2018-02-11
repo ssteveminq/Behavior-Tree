@@ -151,6 +151,7 @@ KYEL	behavior_tree_core/include/tree_node.h	25;"	d
 LEAF_NODE_H	behavior_tree_core/include/leaf_node.h	14;"	d
 LeafNode	behavior_tree_core/include/leaf_node.h	/^class LeafNode : public TreeNode$/;"	c	namespace:BT
 LeafNode	behavior_tree_core/src/leaf_node.cpp	/^BT::LeafNode::LeafNode(std::string name) : TreeNode(name) {}$/;"	f	class:BT::LeafNode
+MARKERS_MAX	behavior_tree_leaves/example_nodes/python/handle_marker.py	/^MARKERS_MAX = 100$/;"	v
 Message	behavior_tree_core/include/exceptions.h	/^    const char* Message;$/;"	m	class:BT::BehaviorTreeException
 N_of_children_	behavior_tree_core/include/control_node.h	/^    unsigned int N_of_children_;$/;"	m	class:BT::ControlNode
 NodeType	behavior_tree_core/include/tree_node.h	/^enum NodeType {ACTION_NODE, CONDITION_NODE, CONTROL_NODE};$/;"	g	namespace:BT
@@ -311,6 +312,7 @@ action_name_	behavior_tree_leaves/example_nodes/cpp/condition_finddoor.cpp	/^   
 action_name_	behavior_tree_leaves/example_nodes/cpp/condition_findperson.cpp	/^    std::string action_name_;$/;"	m	class:BTAction	file:
 additional_spacing_array	behavior_tree_core/src/draw.cpp	/^float additional_spacing_array[10];$/;"	v
 aliases_	behavior_tree_core/include/dot_bt.h	/^  std::vector<std::string> aliases_;$/;"	m	class:BT::DotBt
+array_publisher	behavior_tree_leaves/example_nodes/python/handle_marker.py	/^array_publisher = rospy.Publisher(topic_array, MarkerArray,queue_size=10)$/;"	v
 as_	behavior_tree_leaves/example_nodes/cpp/action_example.cpp	/^    actionlib::SimpleActionServer<behavior_tree_core::BTAction> as_;$/;"	m	class:BTAction	file:
 as_	behavior_tree_leaves/example_nodes/cpp/action_lookperson.cpp	/^    actionlib::SimpleActionServer<behavior_tree_core::BTAction> as_;$/;"	m	class:BTAction	file:
 as_	behavior_tree_leaves/example_nodes/cpp/action_open.cpp	/^    actionlib::SimpleActionServer<behavior_tree_core::BTAction> as_;$/;"	m	class:BTAction	file:
@@ -349,6 +351,7 @@ condition_2	behavior_tree_core/src/gtest/gtest_tree.cpp	/^    BT::ConditionTestN
 condition_2	behavior_tree_core/src/gtest/gtest_tree.cpp	/^    BT::ConditionTestNode* condition_2;$/;"	m	struct:SimpleParallelTest	file:
 condition_3	behavior_tree_core/src/gtest/gtest_tree.cpp	/^    BT::ConditionTestNode* condition_3;$/;"	m	struct:ComplexParallelTest	file:
 condition_variable_	behavior_tree_core/include/tick_engine.h	/^    std::condition_variable condition_variable_;$/;"	m	class:TickEngine
+count	behavior_tree_leaves/example_nodes/python/handle_marker.py	/^count = 0$/;"	v
 current_child_idx_	behavior_tree_core/include/fallback_node_with_memory.h	/^    unsigned int current_child_idx_;$/;"	m	class:BT::FallbackNodeWithMemory
 current_child_idx_	behavior_tree_core/include/sequence_node_with_memory.h	/^    unsigned int current_child_idx_;$/;"	m	class:BT::SequenceNodeWithMemory
 defineNodeDot	behavior_tree_core/src/dot_bt.cpp	/^std::string DotBt::defineNodeDot(TreeNode* node, const std::string& alias)$/;"	f	class:BT::DotBt
@@ -398,7 +401,9 @@ goal	behavior_tree_core/include/actions/ros_action_open.h	/^    behavior_tree_co
 goal	behavior_tree_core/include/conditions/ros_condition.h	/^    behavior_tree_core::BTGoal goal;$/;"	m	class:BT::ROSCondition
 has_parent	behavior_tree_core/src/tree_node.cpp	/^bool BT::TreeNode::has_parent()$/;"	f	class:BT::TreeNode
 has_parent_	behavior_tree_core/include/tree_node.h	/^    bool has_parent_;$/;"	m	class:BT::TreeNode
+id	behavior_tree_leaves/example_nodes/python/handle_marker.py	/^   id = 0$/;"	v
 init	behavior_tree_core/src/draw.cpp	/^bool init = false;$/;"	v
+int_msg	behavior_tree_leaves/example_nodes/python/handle_marker.py	/^   int_msg=std_msgs.msg.Int8()$/;"	v
 is_number_pressed_array	behavior_tree_core/src/draw.cpp	/^bool is_number_pressed_array[10];$/;"	v
 is_state_updated_	behavior_tree_core/include/tree_node.h	/^    bool is_state_updated_;$/;"	m	class:BT::TreeNode
 keyboard	behavior_tree_core/src/draw.cpp	/^void keyboard(unsigned char key, int x, int y)$/;"	f
@@ -408,7 +413,6 @@ loop_rate_	behavior_tree_core/include/dot_bt.h	/^  ros::Rate loop_rate_;$/;"	m	c
 main	behavior_tree_core/src/gtest/external_ros_nodes_test.cpp	/^int main(int argc, char **argv)$/;"	f
 main	behavior_tree_core/src/gtest/gtest_tree.cpp	/^int main(int argc, char **argv)$/;"	f
 main	behavior_tree_core/src/gtest/look_person_test.cpp	/^int main(int argc, char **argv)$/;"	f
-main	behavior_tree_core/src/gtest/lookperson_test.cpp	/^int main(int argc, char **argv)$/;"	f
 main	behavior_tree_core/src/gtest/opening_door_test.cpp	/^int main(int argc, char **argv)$/;"	f
 main	behavior_tree_core/src/tree.cpp	/^int main(int argc, char **argv)$/;"	f
 main	behavior_tree_leaves/example_nodes/cpp/action_example.cpp	/^int main(int argc, char** argv)$/;"	f
@@ -420,9 +424,14 @@ main	behavior_tree_leaves/example_nodes/cpp/condition_findperson.cpp	/^int main(
 main	behavior_tree_leaves/src/action_client.cpp	/^int main(int argc, char **argv)$/;"	f
 main	behavior_tree_leaves/src/condition_client.cpp	/^int main(int argc, char **argv)$/;"	f
 main	behavior_tree_leaves/src/finddoor_condition_client.cpp	/^int main(int argc, char **argv)$/;"	f
+main	behavior_tree_leaves/src/findperson_condition_client.cpp	/^int main(int argc, char **argv)$/;"	f
 main	behavior_tree_leaves/src/localization_condition_client.cpp	/^int main(int argc, char **argv)$/;"	f
 main	behavior_tree_leaves/src/navigation_action_client.cpp	/^int main(int argc, char **argv)$/;"	f
 main	behavior_tree_leaves/src/open_action_client.cpp	/^int main(int argc, char **argv)$/;"	f
+marker	behavior_tree_leaves/example_nodes/python/handle_marker.py	/^   marker = Marker()$/;"	v
+marker2	behavior_tree_leaves/example_nodes/python/handle_marker.py	/^   marker2 = Marker()$/;"	v
+marker3	behavior_tree_leaves/example_nodes/python/handle_marker.py	/^   marker3 = Marker()$/;"	v
+markerArray	behavior_tree_leaves/example_nodes/python/handle_marker.py	/^markerArray = MarkerArray()$/;"	v
 multiple_alias_solver_	behavior_tree_core/include/dot_bt.h	/^  int multiple_alias_solver_;$/;"	m	class:BT::DotBt
 multiple_parents_	behavior_tree_core/include/dot_bt.h	/^  bool multiple_parents_;$/;"	m	class:BT::DotBt
 mutex_	behavior_tree_core/include/tick_engine.h	/^    std::mutex mutex_;$/;"	m	class:TickEngine
@@ -444,7 +453,9 @@ parallel_1	behavior_tree_core/src/gtest/gtest_tree.cpp	/^    BT::ParallelNode* p
 parallel_2	behavior_tree_core/src/gtest/gtest_tree.cpp	/^    BT::ParallelNode* parallel_2;$/;"	m	struct:ComplexParallelTest	file:
 processSpecialKeys	behavior_tree_core/src/draw.cpp	/^void processSpecialKeys(int key, int xx, int yy)$/;"	f
 produceDot	behavior_tree_core/src/dot_bt.cpp	/^void DotBt::produceDot(TreeNode* node, TreeNode* parent, const std::string& parent_alias)$/;"	f	class:BT::DotBt
+pub	behavior_tree_leaves/example_nodes/python/handle_marker.py	/^pub = rospy.Publisher('\/Int_cmd_trackhuman', Int8, queue_size=10)$/;"	v
 publish	behavior_tree_core/src/dot_bt.cpp	/^void DotBt::publish()$/;"	f	class:BT::DotBt
+publisher	behavior_tree_leaves/example_nodes/python/handle_marker.py	/^publisher = rospy.Publisher(topic, Marker,queue_size=10)$/;"	v
 r_color	behavior_tree_core/src/draw.cpp	/^float r_color = 1;$/;"	v
 received_bool	behavior_tree_leaves/example_nodes/cpp/condition_finddoor.cpp	/^bool received_bool=false;$/;"	v
 received_bool	behavior_tree_leaves/example_nodes/cpp/condition_findperson.cpp	/^bool received_bool=false;$/;"	v
@@ -503,7 +514,9 @@ thread_	behavior_tree_core/include/tree_node.h	/^    std::thread thread_;$/;"	m	
 threshold_M_	behavior_tree_core/include/parallel_node.h	/^    unsigned int threshold_M_;$/;"	m	class:BT::ParallelNode
 tick_engine	behavior_tree_core/include/tree_node.h	/^    TickEngine tick_engine;$/;"	m	class:BT::TreeNode
 time_	behavior_tree_core/include/actions/action_test_node.h	/^    int time_;$/;"	m	class:BT::ActionTestNode
+topic	behavior_tree_leaves/example_nodes/python/handle_marker.py	/^topic = 'human_target'$/;"	v
 topic_	behavior_tree_core/include/dot_bt.h	/^  std::string topic_;$/;"	m	class:BT::DotBt
+topic_array	behavior_tree_leaves/example_nodes/python/handle_marker.py	/^topic_array = 'human_boxes'$/;"	v
 tree	behavior_tree_core/src/draw.cpp	/^BT::ControlNode* tree;$/;"	v
 type_	behavior_tree_core/include/tree_node.h	/^    NodeType type_;$/;"	m	class:BT::TreeNode
 updateTree	behavior_tree_core/src/draw.cpp	/^void updateTree(BT::TreeNode* tree, GLfloat x_pos, GLfloat y_pos, GLfloat y_offset, int depth )$/;"	f

@@ -17,10 +17,10 @@
 
 int main(int argc, char **argv)
 {
-    ros::init(argc, argv, "test_localization");
+    ros::init(argc, argv, "find_person_client");
     // create the action client
     // true causes the client to spin its own thread
-    actionlib::SimpleActionClient<behavior_tree_core::BTAction> ac("bh_localization", true);
+    actionlib::SimpleActionClient<behavior_tree_core::BTAction> ac("find_person", true);
     behavior_tree_core::BTResult node_result;
     ROS_INFO("Waiting for action server to start.");
     // wait for the action server to start
@@ -41,6 +41,7 @@ int main(int argc, char **argv)
             if (!isRunning)
             {
                 ROS_INFO("I am running the request");
+                goal.parameter=3;
                 ac.sendGoal(goal);
                 isRunning = true;
                 ac.waitForResult(ros::Duration(30.0));

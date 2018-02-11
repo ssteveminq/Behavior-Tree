@@ -39,7 +39,7 @@ public:
     {
         // Starts the action server
         once_success=false;
-        ROS_INFO("start opening_door server");
+        ROS_INFO("start looking_person server");
         as_.start();
     }
 
