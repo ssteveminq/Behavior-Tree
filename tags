@@ -24,6 +24,7 @@ BT	behavior_tree_core/include/actions/ros_action_open.h	/^namespace BT$/;"	n
 BT	behavior_tree_core/include/condition_node.h	/^namespace BT$/;"	n
 BT	behavior_tree_core/include/conditions/condition_test_node.h	/^namespace BT$/;"	n
 BT	behavior_tree_core/include/conditions/ros_condition.h	/^namespace BT$/;"	n
+BT	behavior_tree_core/include/conditions/ros_condition_attention.h	/^namespace BT$/;"	n
 BT	behavior_tree_core/include/control_node.h	/^namespace BT$/;"	n
 BT	behavior_tree_core/include/dot_bt.h	/^namespace BT$/;"	n
 BT	behavior_tree_core/include/exceptions.h	/^namespace BT$/;"	n
@@ -56,6 +57,7 @@ BehaviorTreeTest	behavior_tree_core/src/gtest/gtest_tree.cpp	/^struct BehaviorTr
 CONDITION	behavior_tree_core/include/tree_node.h	/^enum DrawNodeType {PARALLEL, SELECTOR, SEQUENCE, SEQUENCESTAR, SELECTORSTAR, ACTION, CONDITION, DECORATOR};$/;"	e	enum:BT::DrawNodeType
 CONDITIONS_CONDITION_TEST_NODE_H	behavior_tree_core/include/conditions/condition_test_node.h	15;"	d
 CONDITIONS_ROS_CONDITION_H	behavior_tree_core/include/conditions/ros_condition.h	15;"	d
+CONDITIONS_ROS_CONDITION_H	behavior_tree_core/include/conditions/ros_condition_attention.h	15;"	d
 CONDITION_NODE	behavior_tree_core/include/tree_node.h	/^enum NodeType {ACTION_NODE, CONDITION_NODE, CONTROL_NODE};$/;"	e	enum:BT::NodeType
 CONDITION_NODE_H	behavior_tree_core/include/condition_node.h	15;"	d
 CONSTRUCTOR	behavior_tree_core/templates/action_node_template.cpp	/^BT::CLASSNAME::CONSTRUCTOR(std::string name) : ActionNode::ActionNode(name)$/;"	f	class:BT::CLASSNAME
@@ -104,6 +106,7 @@ EXIT	behavior_tree_core/include/tree_node.h	/^enum ReturnStatus {RUNNING, SUCCES
 Execute	behavior_tree_core/src/behavior_tree.cpp	/^void Execute(BT::ControlNode* root, int TickPeriod_milliseconds)$/;"	f
 FAILURE	behavior_tree_core/include/tree_node.h	/^enum ReturnStatus {RUNNING, SUCCESS, FAILURE, IDLE, HALTED, EXIT};$/;"	e	enum:BT::ReturnStatus
 FAILURE	behavior_tree_core/src/conditions/ros_condition.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};$/;"	e	enum:Status	file:
+FAILURE	behavior_tree_core/src/conditions/ros_condition_attention.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};$/;"	e	enum:Status	file:
 FAILURE	behavior_tree_leaves/example_nodes/cpp/action_example.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};  \/\/ BT return status$/;"	e	enum:Status	file:
 FAILURE	behavior_tree_leaves/example_nodes/cpp/action_lookperson.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};  \/\/ BT return status$/;"	e	enum:Status	file:
 FAILURE	behavior_tree_leaves/example_nodes/cpp/action_open.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};  \/\/ BT return status$/;"	e	enum:Status	file:
@@ -170,9 +173,12 @@ ROSAction_Open	behavior_tree_core/include/actions/ros_action_open.h	/^class ROSA
 ROSAction_Open	behavior_tree_core/src/actions/ros_action_open.cpp	/^BT::ROSAction_Open::ROSAction_Open(std::string name) :$/;"	f	class:BT::ROSAction_Open
 ROSCondition	behavior_tree_core/include/conditions/ros_condition.h	/^class ROSCondition : public ConditionNode$/;"	c	namespace:BT
 ROSCondition	behavior_tree_core/src/conditions/ros_condition.cpp	/^BT::ROSCondition::ROSCondition(std::string name) :$/;"	f	class:BT::ROSCondition
+ROSCondition_attention	behavior_tree_core/include/conditions/ros_condition_attention.h	/^class ROSCondition_attention : public ConditionNode$/;"	c	namespace:BT
+ROSCondition_attention	behavior_tree_core/src/conditions/ros_condition_attention.cpp	/^BT::ROSCondition_attention::ROSCondition_attention(std::string name) :$/;"	f	class:BT::ROSCondition_attention
 RST	behavior_tree_core/include/tree_node.h	22;"	d
 RUNNING	behavior_tree_core/include/tree_node.h	/^enum ReturnStatus {RUNNING, SUCCESS, FAILURE, IDLE, HALTED, EXIT};$/;"	e	enum:BT::ReturnStatus
 RUNNING	behavior_tree_core/src/conditions/ros_condition.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};$/;"	e	enum:Status	file:
+RUNNING	behavior_tree_core/src/conditions/ros_condition_attention.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};$/;"	e	enum:Status	file:
 RUNNING	behavior_tree_leaves/example_nodes/cpp/action_example.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};  \/\/ BT return status$/;"	e	enum:Status	file:
 RUNNING	behavior_tree_leaves/example_nodes/cpp/action_lookperson.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};  \/\/ BT return status$/;"	e	enum:Status	file:
 RUNNING	behavior_tree_leaves/example_nodes/cpp/action_open.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};  \/\/ BT return status$/;"	e	enum:Status	file:
@@ -193,6 +199,7 @@ SUCCEED_ON_ALL	behavior_tree_core/include/tree_node.h	/^enum SuccessPolicy {SUCC
 SUCCEED_ON_ONE	behavior_tree_core/include/tree_node.h	/^enum SuccessPolicy {SUCCEED_ON_ONE, SUCCEED_ON_ALL};$/;"	e	enum:BT::SuccessPolicy
 SUCCESS	behavior_tree_core/include/tree_node.h	/^enum ReturnStatus {RUNNING, SUCCESS, FAILURE, IDLE, HALTED, EXIT};$/;"	e	enum:BT::ReturnStatus
 SUCCESS	behavior_tree_core/src/conditions/ros_condition.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};$/;"	e	enum:Status	file:
+SUCCESS	behavior_tree_core/src/conditions/ros_condition_attention.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};$/;"	e	enum:Status	file:
 SUCCESS	behavior_tree_leaves/example_nodes/cpp/action_example.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};  \/\/ BT return status$/;"	e	enum:Status	file:
 SUCCESS	behavior_tree_leaves/example_nodes/cpp/action_lookperson.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};  \/\/ BT return status$/;"	e	enum:Status	file:
 SUCCESS	behavior_tree_leaves/example_nodes/cpp/action_open.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};  \/\/ BT return status$/;"	e	enum:Status	file:
@@ -215,6 +222,7 @@ SimpleSequenceTest	behavior_tree_core/src/gtest/gtest_tree.cpp	/^struct SimpleSe
 SimpleSequenceWithMemoryTest	behavior_tree_core/src/gtest/gtest_tree.cpp	/^    SimpleSequenceWithMemoryTest()$/;"	f	struct:SimpleSequenceWithMemoryTest
 SimpleSequenceWithMemoryTest	behavior_tree_core/src/gtest/gtest_tree.cpp	/^struct SimpleSequenceWithMemoryTest : testing::Test$/;"	s	file:
 Status	behavior_tree_core/src/conditions/ros_condition.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};$/;"	g	file:
+Status	behavior_tree_core/src/conditions/ros_condition_attention.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};$/;"	g	file:
 Status	behavior_tree_leaves/example_nodes/cpp/action_example.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};  \/\/ BT return status$/;"	g	file:
 Status	behavior_tree_leaves/example_nodes/cpp/action_lookperson.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};  \/\/ BT return status$/;"	g	file:
 Status	behavior_tree_leaves/example_nodes/cpp/action_open.cpp	/^enum Status {RUNNING, SUCCESS, FAILURE};  \/\/ BT return status$/;"	g	file:
@@ -259,6 +267,7 @@ TREE_NODE_H	behavior_tree_core/include/tree_node.h	15;"	d
 Tick	behavior_tree_core/src/action_node.cpp	/^BT::ReturnStatus BT::ActionNode::Tick()$/;"	f	class:BT::ActionNode
 Tick	behavior_tree_core/src/conditions/condition_test_node.cpp	/^BT::ReturnStatus BT::ConditionTestNode::Tick()$/;"	f	class:BT::ConditionTestNode
 Tick	behavior_tree_core/src/conditions/ros_condition.cpp	/^BT::ReturnStatus BT::ROSCondition::Tick()$/;"	f	class:BT::ROSCondition
+Tick	behavior_tree_core/src/conditions/ros_condition_attention.cpp	/^BT::ReturnStatus BT::ROSCondition_attention::Tick()$/;"	f	class:BT::ROSCondition_attention
 Tick	behavior_tree_core/src/fallback_node.cpp	/^BT::ReturnStatus BT::FallbackNode::Tick()$/;"	f	class:BT::FallbackNode
 Tick	behavior_tree_core/src/fallback_node_with_memory.cpp	/^BT::ReturnStatus BT::FallbackNodeWithMemory::Tick()$/;"	f	class:BT::FallbackNodeWithMemory
 Tick	behavior_tree_core/src/parallel_node.cpp	/^BT::ReturnStatus BT::ParallelNode::Tick()$/;"	f	class:BT::ParallelNode
@@ -304,6 +313,7 @@ action_3	behavior_tree_core/src/gtest/gtest_tree.cpp	/^    BT::ActionTestNode* a
 action_client_	behavior_tree_core/include/actions/ros_action.h	/^    actionlib::SimpleActionClient<behavior_tree_core::BTAction> action_client_;$/;"	m	class:BT::ROSAction
 action_client_	behavior_tree_core/include/actions/ros_action_open.h	/^    actionlib::SimpleActionClient<behavior_tree_core::BTAction> action_client_;$/;"	m	class:BT::ROSAction_Open
 action_client_	behavior_tree_core/include/conditions/ros_condition.h	/^    actionlib::SimpleActionClient<behavior_tree_core::BTAction> action_client_;$/;"	m	class:BT::ROSCondition
+action_client_	behavior_tree_core/include/conditions/ros_condition_attention.h	/^    actionlib::SimpleActionClient<behavior_tree_core::BTAction> action_client_;$/;"	m	class:BT::ROSCondition_attention
 action_name_	behavior_tree_leaves/example_nodes/cpp/action_example.cpp	/^    std::string action_name_;$/;"	m	class:BTAction	file:
 action_name_	behavior_tree_leaves/example_nodes/cpp/action_lookperson.cpp	/^    std::string action_name_;$/;"	m	class:BTAction	file:
 action_name_	behavior_tree_leaves/example_nodes/cpp/action_open.cpp	/^    std::string action_name_;$/;"	m	class:BTAction	file:
@@ -399,6 +409,7 @@ get_x_shift	behavior_tree_core/src/tree_node.cpp	/^float BT::TreeNode::get_x_shi
 goal	behavior_tree_core/include/actions/ros_action.h	/^    behavior_tree_core::BTGoal goal;$/;"	m	class:BT::ROSAction
 goal	behavior_tree_core/include/actions/ros_action_open.h	/^    behavior_tree_core::BTGoal goal;$/;"	m	class:BT::ROSAction_Open
 goal	behavior_tree_core/include/conditions/ros_condition.h	/^    behavior_tree_core::BTGoal goal;$/;"	m	class:BT::ROSCondition
+goal	behavior_tree_core/include/conditions/ros_condition_attention.h	/^    behavior_tree_core::BTGoal goal;$/;"	m	class:BT::ROSCondition_attention
 has_parent	behavior_tree_core/src/tree_node.cpp	/^bool BT::TreeNode::has_parent()$/;"	f	class:BT::TreeNode
 has_parent_	behavior_tree_core/include/tree_node.h	/^    bool has_parent_;$/;"	m	class:BT::TreeNode
 id	behavior_tree_leaves/example_nodes/python/handle_marker.py	/^   id = 0$/;"	v
@@ -408,6 +419,7 @@ is_number_pressed_array	behavior_tree_core/src/draw.cpp	/^bool is_number_pressed
 is_state_updated_	behavior_tree_core/include/tree_node.h	/^    bool is_state_updated_;$/;"	m	class:BT::TreeNode
 keyboard	behavior_tree_core/src/draw.cpp	/^void keyboard(unsigned char key, int x, int y)$/;"	f
 keyboard_release	behavior_tree_core/src/draw.cpp	/^void keyboard_release(unsigned char key, int x, int y)$/;"	f
+last_msg	behavior_tree_leaves/example_nodes/cpp/condition_findperson.cpp	/^    int last_msg;$/;"	m	class:BTAction	file:
 left_right_	behavior_tree_core/include/dot_bt.h	/^  bool left_right_;$/;"	m	class:BT::DotBt
 loop_rate_	behavior_tree_core/include/dot_bt.h	/^  ros::Rate loop_rate_;$/;"	m	class:BT::DotBt
 main	behavior_tree_core/src/gtest/external_ros_nodes_test.cpp	/^int main(int argc, char **argv)$/;"	f
@@ -446,6 +458,8 @@ nh_	behavior_tree_leaves/example_nodes/cpp/condition_findperson.cpp	/^    ros::N
 node_result	behavior_tree_core/include/actions/ros_action.h	/^    behavior_tree_core::BTResult node_result;$/;"	m	class:BT::ROSAction
 node_result	behavior_tree_core/include/actions/ros_action_open.h	/^    behavior_tree_core::BTResult node_result;$/;"	m	class:BT::ROSAction_Open
 node_result	behavior_tree_core/include/conditions/ros_condition.h	/^    behavior_tree_core::BTResult node_result;$/;"	m	class:BT::ROSCondition
+node_result	behavior_tree_core/include/conditions/ros_condition_attention.h	/^    behavior_tree_core::BTResult node_result;$/;"	m	class:BT::ROSCondition_attention
+num_human_callback	behavior_tree_leaves/example_nodes/cpp/condition_findperson.cpp	/^    void num_human_callback(const std_msgs::Int8::ConstPtr& msg)$/;"	f	class:BTAction
 number_char	behavior_tree_core/src/draw.cpp	/^unsigned char number_char[4] = {'0', '1', '2', '3'};$/;"	v
 once_success	behavior_tree_leaves/example_nodes/cpp/action_lookperson.cpp	/^    bool once_success;$/;"	m	class:BTAction	file:
 once_success	behavior_tree_leaves/example_nodes/cpp/action_open.cpp	/^    bool once_success;$/;"	m	class:BTAction	file:
@@ -509,6 +523,7 @@ set_x_shift	behavior_tree_core/src/tree_node.cpp	/^void BT::TreeNode::set_x_shif
 state_condition_variable_	behavior_tree_core/include/tree_node.h	/^    std::condition_variable state_condition_variable_;$/;"	m	class:BT::TreeNode
 state_mutex_	behavior_tree_core/include/tree_node.h	/^    std::mutex state_mutex_;$/;"	m	class:BT::TreeNode
 status_	behavior_tree_core/include/tree_node.h	/^    ReturnStatus status_;$/;"	m	class:BT::TreeNode
+sub	behavior_tree_leaves/example_nodes/cpp/condition_findperson.cpp	/^    ros::Subscriber sub;$/;"	m	class:BTAction	file:
 success_childred_num_	behavior_tree_core/include/parallel_node.h	/^    unsigned int success_childred_num_;$/;"	m	class:BT::ParallelNode
 thread_	behavior_tree_core/include/tree_node.h	/^    std::thread thread_;$/;"	m	class:BT::TreeNode
 threshold_M_	behavior_tree_core/include/parallel_node.h	/^    unsigned int threshold_M_;$/;"	m	class:BT::ParallelNode
@@ -552,6 +567,7 @@ zoom_fraction	behavior_tree_core/src/draw.cpp	/^float zoom_fraction = 0.1f;$/;"	
 ~ROSAction	behavior_tree_core/src/actions/ros_action.cpp	/^BT::ROSAction::~ROSAction() {}$/;"	f	class:BT::ROSAction
 ~ROSAction_Open	behavior_tree_core/src/actions/ros_action_open.cpp	/^BT::ROSAction_Open::~ROSAction_Open() {}$/;"	f	class:BT::ROSAction_Open
 ~ROSCondition	behavior_tree_core/src/conditions/ros_condition.cpp	/^BT::ROSCondition::~ROSCondition() {}$/;"	f	class:BT::ROSCondition
+~ROSCondition_attention	behavior_tree_core/src/conditions/ros_condition_attention.cpp	/^BT::ROSCondition_attention::~ROSCondition_attention() {}$/;"	f	class:BT::ROSCondition_attention
 ~SequenceNode	behavior_tree_core/src/sequence_node.cpp	/^BT::SequenceNode::~SequenceNode() {}$/;"	f	class:BT::SequenceNode
 ~SequenceNodeWithMemory	behavior_tree_core/src/sequence_node_with_memory.cpp	/^BT::SequenceNodeWithMemory::~SequenceNodeWithMemory() {}$/;"	f	class:BT::SequenceNodeWithMemory
 ~TickEngine	behavior_tree_core/src/tick_engine.cpp	/^TickEngine::~TickEngine() {}$/;"	f	class:TickEngine

@@ -32,6 +32,8 @@ protected:
     std::string action_name_;
     bool Oncetrue;
 
+    ros::Subscriber sub;
+    int last_msg;
     // create messages that are used to published feedback/result
     behavior_tree_core::BTFeedback feedback_;
     behavior_tree_core::BTResult result_;
@@ -39,15 +41,23 @@ protected:
 public:
     explicit BTAction(std::string name) :
         as_(nh_, name, boost::bind(&BTAction::execute_callback, this, _1), false),
-        action_name_(name)
+        action_name_(name),last_msg(0)
     {
         // start the action server (action in sense of Actionlib not BT action)
         as_.start();
         ROS_INFO("Condition Server Started");
+        sub = nh_.subscribe<std_msgs::Int8>("/detection/num_human",10,&BTAction::num_human_callback,this);
     }
 
     ~BTAction(void)
     { }
+
+    void num_human_callback(const std_msgs::Int8::ConstPtr& msg)
+    {
+        ROS_INFO("received:  %d \n", (int)msg->data);
+        last_msg= static_cast<int>(msg->data);
+    }
+
     void execute_callback(const behavior_tree_core::BTGoalConstPtr &goal)
     {
         ROS_INFO("Condition_checker-find human");
@@ -62,20 +72,8 @@ public:
             // break;
         }
 
-
-        //boost::shared_ptr<std_msgs::Int8 const> sharedPtr;
-        //ksksk msg about the number of human detected
-        //ksksk msg about the number of human detected
-        //boost::shared_ptr<std_msgs::Int8 const> sharedPtr;
-        //sharedPtr  = ros::topic::waitForMessage<std_msgs::Int8>("/detection/number_of_detected_human", ros::Duration(10));
-        //std_msgs::Int8 human_num = (*sharedPtr);
-        //int humannum=static_cast<int>(human_num.data);
         
-
-        //set_status(SUCCESS);
-        int received_param=goal->parameter; 
-        std::cout<<"received msg: "<< goal->parameter<<std::endl;
-        if(received_param>0)
+        if(last_msg>0)
         {
             set_status(SUCCESS);
         }
@@ -117,11 +115,13 @@ int main(int argc, char** argv)
     ros::init(argc, argv, "find_person");
     ROS_INFO("Enum: %d", RUNNING);
     ROS_INFO("I am waiting for detecting humans");
-    ROS_INFO("condition Ready for Ticks");
+    //ROS_INFO("condition Ready for Ticks");
 
+    ros::Subscriber people_detection_sub;
     //Generate ros_action by node name
     BTAction bt_action(ros::this_node::getName());
     
+    //people_detection_sub = bt_action.,
     ros::spin();
 
     return 0;
