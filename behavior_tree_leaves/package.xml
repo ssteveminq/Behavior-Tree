@@ -47,7 +47,9 @@
   <build_depend>rospy</build_depend>
   <build_depend>roslib</build_depend>
   <build_depend>std_msgs</build_depend>
+  <build_depend>std_srvs</build_depend>
   <build_depend>geometry_msgs</build_depend>
+  <build_depend>message_runtime</build_depend>
   <!-- <build_depend>std_msgs</build_depend> -->
   <build_depend>tf</build_depend>
   <build_depend>behavior_tree_core</build_depend>
@@ -59,6 +61,7 @@
   <run_depend>rospy</run_depend>
   <run_depend>roslib</run_depend>
   <run_depend>std_msgs</run_depend>
+  <run_depend>std_srvs</run_depend>
   <run_depend>geometry_msgs</run_depend>
   <run_depend>message_runtime</run_depend>
 

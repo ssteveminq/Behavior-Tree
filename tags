@@ -422,6 +422,7 @@ keyboard_release	behavior_tree_core/src/draw.cpp	/^void keyboard_release(unsigne
 last_msg	behavior_tree_leaves/example_nodes/cpp/condition_findperson.cpp	/^    int last_msg;$/;"	m	class:BTAction	file:
 left_right_	behavior_tree_core/include/dot_bt.h	/^  bool left_right_;$/;"	m	class:BT::DotBt
 loop_rate_	behavior_tree_core/include/dot_bt.h	/^  ros::Rate loop_rate_;$/;"	m	class:BT::DotBt
+m_client	behavior_tree_leaves/example_nodes/cpp/action_lookperson.cpp	/^    ros::ServiceClient m_client;$/;"	m	class:BTAction	file:
 main	behavior_tree_core/src/gtest/external_ros_nodes_test.cpp	/^int main(int argc, char **argv)$/;"	f
 main	behavior_tree_core/src/gtest/gtest_tree.cpp	/^int main(int argc, char **argv)$/;"	f
 main	behavior_tree_core/src/gtest/look_person_test.cpp	/^int main(int argc, char **argv)$/;"	f

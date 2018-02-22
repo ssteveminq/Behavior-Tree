@@ -14,6 +14,7 @@
 #include <actionlib/server/simple_action_server.h>
 #include <behavior_tree_core/BTAction.h>
 #include <geometry_msgs/PoseStamped.h>
+#include <gaze_service/gaze_target.h>
 #include <string>
 
 
@@ -30,6 +31,7 @@ protected:
     behavior_tree_core::BTFeedback feedback_;  // action feedback (SUCCESS, FAILURE)
     behavior_tree_core::BTResult result_;  // action feedback  (same as feedback for us)
     bool once_success;
+    ros::ServiceClient m_client;
 
 
 public:
@@ -41,6 +43,8 @@ public:
         once_success=false;
         ROS_INFO("start looking_person server");
         as_.start();
+        m_client = nh_.serviceClient<gaze_service::gaze_target>("gaze_see_target");
+
     }
 
     ~BTAction(void)
@@ -85,6 +89,20 @@ public:
 
             if (i == 5)
             {
+                gaze_service::gaze_target gaze_srv;
+                gaze_srv.request.x_from_map =2.0;
+                gaze_srv.request.y_from_map =6.0;
+                if(m_client.call(gaze_srv))
+                {
+                    ROS_INFO("gaze_service done");
+                
+                } 
+                else{
+                
+                
+                    ROS_INFO("gaze_service failed");
+                }
+                
                 set_status(SUCCESS);
             }
         }

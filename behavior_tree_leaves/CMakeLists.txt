@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(behavior_tree_leaves)
 
+#SET(SOURCES example_nodes)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
@@ -9,13 +10,17 @@ find_package(catkin REQUIRED COMPONENTS
   actionlib_msgs
   actionlib
   message_generation
+  message_runtime
   roscpp
   roslib
   rospy
   std_msgs
+  std_srvs
   geometry_msgs
   behavior_tree_core
   roslaunch
+  gaze_service
+  navi_service
 )
 roslaunch_add_file_check(launch)
 ## System dependencies are found with CMake's conventions
@@ -113,8 +118,15 @@ add_definitions(-Wall -g -O0 -Wno-deprecated -static -Bstatic -std=gnu++0x)
 #  DEPENDS system_lib
 #)
 
+find_package(gaze_service REQUIRED)
 catkin_package(
   CATKIN_DEPENDS actionlib_msgs
+  roscpp
+  geometry_msgs
+  std_msgs
+  std_srvs
+  actionlib
+  tf
 )
 
 
@@ -126,6 +138,9 @@ catkin_package(
 ## Your package locations should be listed before other locations
 # include_directories(include)
 include_directories(
+  include
+  src
+  exmaple_nodes
   ${catkin_INCLUDE_DIRS}
 )
 
@@ -172,6 +187,7 @@ add_dependencies(
   ${behavior_tree_leaves_EXPORTED_TARGETS}
   ${PROJECT_NAME}_generate_messages_cpp
   behavior_tree_core_generate_messages_cpp
+  ${catkin_EXPORTED_TARGETS}
 )
 
 add_executable(action_example example_nodes/cpp/action_example.cpp)
@@ -186,6 +202,7 @@ add_dependencies(
   ${behavior_tree_leaves_EXPORTED_TARGETS}
   ${PROJECT_NAME}_generate_messages_cpp
   behavior_tree_core_generate_messages_cpp
+  ${catkin_EXPORTED_TARGETS}
 )
 
 add_executable(action_open example_nodes/cpp/action_open.cpp)
@@ -200,6 +217,7 @@ add_dependencies(
   ${behavior_tree_leaves_EXPORTED_TARGETS}
   ${PROJECT_NAME}_generate_messages_cpp
   behavior_tree_core_generate_messages_cpp
+  ${catkin_EXPORTED_TARGETS}
 )
 
 add_executable(action_lookperson example_nodes/cpp/action_lookperson.cpp)
@@ -214,6 +232,7 @@ add_dependencies(
   ${behavior_tree_leaves_EXPORTED_TARGETS}
   ${PROJECT_NAME}_generate_messages_cpp
   behavior_tree_core_generate_messages_cpp
+  ${catkin_EXPORTED_TARGETS}
 )
 
 add_executable(condition_example example_nodes/cpp/condition_example.cpp)
@@ -228,6 +247,7 @@ add_dependencies(
   ${behavior_tree_leaves_EXPORTED_TARGETS}
   ${PROJECT_NAME}_generate_messages_cpp
   behavior_tree_core_generate_messages_cpp
+  ${catkin_EXPORTED_TARGETS}
 )
 
 add_executable(condition_finddoor example_nodes/cpp/condition_finddoor.cpp)
@@ -242,6 +262,7 @@ add_dependencies(
   ${behavior_tree_leaves_EXPORTED_TARGETS}
   ${PROJECT_NAME}_generate_messages_cpp
   behavior_tree_core_generate_messages_cpp
+  ${catkin_EXPORTED_TARGETS}
 )
 
 add_executable(condition_findperson example_nodes/cpp/condition_findperson.cpp)
@@ -255,6 +276,7 @@ add_dependencies(
   ${behavior_tree_leaves_EXPORTED_TARGETS}
   ${PROJECT_NAME}_generate_messages_cpp
   behavior_tree_core_generate_messages_cpp
+  ${catkin_EXPORTED_TARGETS}
 )
 
 add_executable(findperson_condition_client src/findperson_condition_client.cpp)
@@ -264,8 +286,8 @@ add_dependencies(
   ${behavior_tree_leaves_EXPORTED_TARGETS}
   ${PROJECT_NAME}_generate_messages_cpp
   behavior_tree_core_generate_messages_cpp
+  ${catkin_EXPORTED_TARGETS}
 )
-
 
 
 

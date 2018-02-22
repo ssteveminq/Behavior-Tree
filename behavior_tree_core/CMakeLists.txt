@@ -115,19 +115,21 @@ target_link_libraries(gtest_ros
   ${catkin_LIBRARIES}
   ${PROJECT_NAME}
   ${GTEST_LIBRARIES})
+add_dependencies(gtest_ros ${catkin_EXPORTED_TARGETS})
 
 add_executable(opening_door src/gtest/opening_door_test.cpp)
 target_link_libraries(opening_door
   ${catkin_LIBRARIES}
   ${PROJECT_NAME}
   ${GTEST_LIBRARIES})
+add_dependencies(opening_door ${catkin_EXPORTED_TARGETS})
 
 add_executable(look_person src/gtest/look_person_test.cpp)
 target_link_libraries(look_person 
   ${catkin_LIBRARIES}
   ${PROJECT_NAME}
   ${GTEST_LIBRARIES})
-
+add_dependencies(look_person ${catkin_EXPORTED_TARGETS})
 
 #add_executable(ros_test src/ros_test.cpp ${BTSrcLibrary} ${BTHeadLibrary})
 #target_link_libraries(ros_test ${catkin_LIBRARIES} ${OPENGL_LIBRARIES} ${GLUT_LIBRARY})

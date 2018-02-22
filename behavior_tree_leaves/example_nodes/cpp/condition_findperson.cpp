@@ -16,6 +16,8 @@
 #include <std_msgs/Bool.h>
 #include <geometry_msgs/PoseStamped.h>
 #include <std_msgs/Int8.h>
+#include <navi_service/GoTargetPos.h>
+#include <gaze_service/gaze_target.h>
 
 #include <string>
 
